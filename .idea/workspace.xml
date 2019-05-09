@@ -2,6 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1b9b8b9-3ad8-4e0d-8be9-2c4e45c9bcb8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/app/assets/javascripts/registration.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/assets/javascripts/registrations.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/assets/javascripts/session.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/assets/javascripts/sessions.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/assets/stylesheets/registration.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/assets/stylesheets/registrations.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/assets/stylesheets/session.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/assets/stylesheets/sessions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/controllers/registrations_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/controllers/sessions_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/helpers/registration_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/helpers/registrations_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/helpers/session_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/helpers/sessions_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/views/registrations/index.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/views/registrations/new.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/views/sessions/index.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/views/sessions/new.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/test/controllers/registration_controller_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/test/controllers/registrations_controller_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/test/controllers/session_controller_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/test/controllers/sessions_controller_test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/controllers/application_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/controllers/users_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/routes.rb" afterDir="false" />
@@ -14,47 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="302">
-              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/app/views/registrations/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/app/views/sessions/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="40" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/app/controllers/sessions_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project/app/controllers/registrations_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -85,8 +71,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="993" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
     <option name="y" value="25" />
     <option name="width" value="927" />
     <option name="height" value="925" />
@@ -290,18 +276,26 @@
       <updated>1557002922577</updated>
       <workItem from="1557002928552" duration="3019000" />
       <workItem from="1557006643955" duration="5171000" />
-      <workItem from="1557182384058" duration="1422000" />
+      <workItem from="1557182384058" duration="2376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9612000" />
+    <option name="totallyTimeSpent" value="10566000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="993" y="25" width="927" height="925" extended-state="4" />
-    <editor active="true" />
+    <frame x="67" y="25" width="1853" height="925" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2996595" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14609851" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -310,11 +304,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32914573" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4971623" visible="true" weight="0.34798995" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32914573" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4971623" visible="true" weight="0.34798995" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50283766" side_tool="true" weight="0.3488665" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -401,29 +395,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/sessions/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="40" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/app/views/registrations/new.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/registrations/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app/views/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
@@ -437,8 +410,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app/controllers/registrations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <state relative-caret-position="210">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/views/sessions/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="40" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/views/registrations/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
         </state>
       </provider>
     </entry>
