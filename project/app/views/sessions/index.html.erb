@@ -1,3 +1,15 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>
+			Sessions
+		</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<h1>Il Arrabiato</h1>
+
 <%= form_for(:session, url: log_in_path) do |f| %>
   <div class="form-group">
     <%= f.label :email,"Email" %><br />
@@ -14,3 +26,4 @@
   <br>
 <% end %>
 <%= link_to 'Sign In', registrations_path %>
+</body>

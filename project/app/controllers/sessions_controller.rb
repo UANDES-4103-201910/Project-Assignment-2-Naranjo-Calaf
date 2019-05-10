@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user.present?
       session[:user_id] = user.id
       flash[:notice] = 'Login Success'
-      redirect_to users_path(user.id)
+      redirect_to profile_path(user.id)
     else
       flash[:notice] = 'Login Failed'
       redirect_to root_path

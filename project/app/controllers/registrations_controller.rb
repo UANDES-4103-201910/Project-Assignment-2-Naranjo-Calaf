@@ -8,9 +8,8 @@ class RegistrationsController < ApplicationController
     @user = User.create(user_params)
 
     if @user.save
-      session[:current_user.id]= @user.id
       flash[:notice] = "Success registration"
-      redirect_to root_url
+      redirect_to new_profile_path
     else
       flash[:notice] = "Error."
       redirect_to registrations_url
