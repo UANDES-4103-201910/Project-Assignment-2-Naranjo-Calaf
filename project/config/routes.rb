@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   #TODO: IMPLEMENT CORRECTLY DEVICES  (NARANJO)
   #TODO: Implement CANCANCAN (NARANJO)
   authenticated :users do
-    root to: 'posts#index' #TODO: move it to the homepage (CALAF)
+    root to: 'session#create' #TODO: move it to the homepage (CALAF)
   end
 
   unauthenticated :users do
@@ -30,10 +30,10 @@ Rails.application.routes.draw do
 
   #TODO: Implement authentication with google  (NARANJO)
 
-  post '/login',   to: 'sessions#create', as: :log_in
-  delete '/log_out' => 'sessions#destroy', as: :log_out
+  #post '/login',   to: 'sessions#create', as: :log_in
+  #delete '/log_out' => 'sessions#destroy', as: :log_out
 
-  get '/sign_in' => 'devise/registrations#new'
+  get '/sign_in' => 'session#create'
 
   # TODO; REGISTRATION; Password Recovery( Show in Registration Pass Recovery, link to User/edit, and show only password)
   # TODO: USER ADMINISTRATION: LAST ACCESS (No se como hacerlo)
