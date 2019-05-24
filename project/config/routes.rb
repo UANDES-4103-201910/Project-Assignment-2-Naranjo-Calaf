@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'registrations/index'
-  get 'sessions/index'
+  # get 'registrations/index'
+  # get 'sessions/index'
   resources :comments
   resources :follows
   resources :profiles
