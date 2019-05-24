@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'registrations/new'
+  devise_for :users
   get 'registrations/index'
   get 'sessions/index'
   resources :comments
@@ -19,11 +18,35 @@ Rails.application.routes.draw do
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root :to => 'sessions#index'
+  #TODO: IMPLEMENT CORRECTLY DEVICES  (NARANJO)
+  #TODO: Implement CANCANCAN (NARANJO)
+  authenticated :users do
+    root to: 'posts#index' #TODO: move it to the homepage (CALAF)
+  end
+
+  unauthenticated :users do
+    root to: 'sessions#new'
+  end
+
+  #TODO: Implement authentication with google  (NARANJO)
 
   post '/login',   to: 'sessions#create', as: :log_in
   delete '/log_out' => 'sessions#destroy', as: :log_out
 
-  get '/sign_in' => 'registrations#index', as: :registrations
-  post '/sign_in' => 'registrations#create', as: :sign_in
+  get '/sign_in' => 'devise/registrations#new'
+
+  # TODO; REGISTRATION; Password Recovery( Show in Registration Pass Recovery, link to User/edit, and show only password)
+  # TODO: USER ADMINISTRATION: LAST ACCESS (No se como hacerlo)
+  # TODO: USER ADMINISTRATION: User Role (Query Find id User in Admin Table , if Admin.Super = True SHow SUPER USER, Else: Admin, DEFAULT: User
+  # TODO: SYSTEM ADMIN: View Post: Link to : Show posts where the id of the posts = id user logged in
+  # TODO: SYSTEM ADMINISTRATION: Change password ( EDIT User where user is logged)
+  # TODO: USER PROFILE: SHOW POSTS where (user id = post.userid)
+  # TODO: POSTS: Up/down Votes Show Posts where Votes.post.id = @post.id)
+  # TODO: POSTS: Follow Show Posts where Follow.post.id = @post.id)
+  # TODO: POSTS: Inappropiate Show Posts where Inapropiate.post.id = @post.id)
+  # TODO: CREAR EDITAR Comentarios
+  # TODO: (X) Tag User
+  # TODO View Author Profile (Show Profile where Post.id = User.id of author)
+  # TODO: SEARCH: Nickname (Where User.name = @nickname)
+  # TODO: SEARCH: LOCATION (Where User.name = @location)
 end
