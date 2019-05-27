@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
   devise_for :users
   resources :comments
   resources :follows
@@ -16,10 +17,10 @@ Rails.application.routes.draw do
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  #TODO: IMPLEMENT CORRECTLY DEVICES  (NARANJO)
+  #TODO: IMPLEMENT CORRECTLY DEVICES  (NARANJO) //DONE
   #TODO: Implement CANCANCAN (NARANJO)
   #  authenticated :users do
-  #    root to: 'session#create' #TODO: move it to the homepage (CALAF)
+  #    root to: 'session#create'
   #  end
   #
   #  unauthenticated :users do
@@ -36,8 +37,8 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      #root 'home#index', as: :authenticated_root
-      root 'users#edit', as: :authenticated_root
+      root 'welcome#index', as: :authenticated_root #TODO: move it to the homepage (CALAF)
+      #root 'posts#index', as: :authenticated_root
     end
 
     unauthenticated do
