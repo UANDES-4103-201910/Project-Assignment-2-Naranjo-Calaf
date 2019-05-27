@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  # get 'registrations/index'
-  # get 'sessions/index'
   resources :comments
   resources :follows
   resources :profiles
@@ -20,20 +18,35 @@ Rails.application.routes.draw do
 
   #TODO: IMPLEMENT CORRECTLY DEVICES  (NARANJO)
   #TODO: Implement CANCANCAN (NARANJO)
-  authenticated :users do
-    root to: 'session#create' #TODO: move it to the homepage (CALAF)
+  #  authenticated :users do
+  #    root to: 'session#create' #TODO: move it to the homepage (CALAF)
+  #  end
+  #
+  #  unauthenticated :users do
+  #    root to: 'sessions#new'
+  #  end
+  #
+  #
+  #
+  # #TODO: Implement authentication with google  (NARANJO)
+  #
+  # post '/login' => 'sessions#create', as: :log_in
+  # delete '/log_out' => 'sessions#destroy', as: :log_out
+
+
+  devise_scope :user do
+    authenticated :user do
+      #root 'home#index', as: :authenticated_root
+      root 'users#edit', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
   end
 
-  unauthenticated :users do
-    root to: 'sessions#new'
-  end
 
-  #TODO: Implement authentication with google  (NARANJO)
 
-  #post '/login',   to: 'sessions#create', as: :log_in
-  #delete '/log_out' => 'sessions#destroy', as: :log_out
-
-  get '/sign_in' => 'session#create'
 
   # TODO; REGISTRATION; Password Recovery( Show in Registration Pass Recovery, link to User/edit, and show only password)
   # TODO: USER ADMINISTRATION: LAST ACCESS (No se como hacerlo)
