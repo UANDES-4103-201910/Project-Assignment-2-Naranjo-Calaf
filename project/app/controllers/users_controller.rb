@@ -68,23 +68,27 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
     #
+
+    def admin
+
+    end
     # # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :name)
     end
     #
     # #View Posts
-    # def user_posts
-    #   Post.where(user: User.find(params[:id]))
-    # end
+    def user_posts
+      Post.where(user: User.find(params[:id]))
+    end
     #
     # #View Comments
-    # def user_comments
-    #   Comment.where(user: User.find(params[:id]))
-    # end
+    def user_comments
+      Comment.where(user: User.find(params[:id]))
+    end
     #
     # #View Votes
-    # def user_votes
-    #   Vote.where(user: User.find(params[:id]))
-    # end
+    def user_votes
+      Vote.where(user: User.find(params[:id]))
+    end
 end

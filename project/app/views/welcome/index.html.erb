@@ -1,5 +1,4 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+WELCOME
 <table>
   <thead>
   <tr>
@@ -31,3 +30,10 @@
   <% end %>
   </tbody>
 </table>
+
+<!--if the user is logged in-->
+<% if can? :read, @post %>
+  <%= link_to "View", @post %>
+<% end %>
+
+
