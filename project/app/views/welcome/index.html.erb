@@ -1,4 +1,20 @@
-WELCOME
+<!DOCTYPE html>
+<html lang = en>
+<head>
+  <title>Il arrabiato</title>
+</head>
+<body>
+<div class="topnav">
+  <h1>Il Arrabiato</h1>
+  <button>Log out</button>
+  <input type="text" placeholder="Search..">
+</div>
+
+<img src= "/project/default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
+
+<h2>WELCOME</h2>
+
+
 <table>
   <thead>
   <tr>
@@ -30,10 +46,9 @@ WELCOME
   <% end %>
   </tbody>
 </table>
-
+</body>
 <!--if the user is logged in-->
 <% if can? :read, @post %>
   <%= link_to "View", @post %>
 <% end %>
-
 
