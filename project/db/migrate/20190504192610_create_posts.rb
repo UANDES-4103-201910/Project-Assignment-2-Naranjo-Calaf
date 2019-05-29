@@ -4,9 +4,9 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.string :title
       t.text :description
-      t.boolean :open
+      t.boolean :open,         null: false, default: true
       t.string :location
-      t.boolean :solved
+      t.boolean :solved,        null: false, default: false
       t.datetime :date
 
       t.timestamps
