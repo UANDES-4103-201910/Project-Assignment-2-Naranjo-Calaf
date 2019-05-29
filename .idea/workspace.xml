@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1b9b8b9-3ad8-4e0d-8be9-2c4e45c9bcb8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/WEB-TECHNOLOGIES-LAB-ASSIGNMENT-2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WEB-TECHNOLOGIES-LAB-ASSIGNMENT-2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/project/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/assets/javascripts/welcome.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/assets/javascripts/welcome.coffee" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/assets/stylesheets/welcome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/assets/stylesheets/welcome.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/project/db/schema.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/app/views/welcome/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="820">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/app/assets/stylesheets/welcome.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -54,7 +62,10 @@
         <option value="$PROJECT_DIR$/project/config/routes.rb" />
         <option value="$PROJECT_DIR$/project/app/models/ability.rb" />
         <option value="$PROJECT_DIR$/project/app/controllers/users/registrations_controller.rb" />
+        <option value="$PROJECT_DIR$/project/app/assets/javascripts/welcome.coffee" />
+        <option value="$PROJECT_DIR$/project/app/assets/javascripts/welcome.js" />
         <option value="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" />
+        <option value="$PROJECT_DIR$/project/app/assets/stylesheets/welcome.scss" />
       </list>
     </option>
   </component>
@@ -71,22 +82,6 @@
     </navigator>
     <panes>
       <pane id="RailsProjectView" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,6 +126,71 @@
               <item name="Project-Assignment-2-Naranjo-Calaf" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="javascripts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="concerns" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Project-Assignment-2-Naranjo-Calaf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Desktop/Project-Assignment-2-Naranjo-Calaf" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="vendor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -272,11 +332,12 @@
       <workItem from="1557182384058" duration="2376000" />
       <workItem from="1558971111978" duration="17181000" />
       <workItem from="1559091895623" duration="1066000" />
+      <workItem from="1559154751074" duration="10331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28813000" />
+    <option name="totallyTimeSpent" value="39144000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -289,8 +350,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="638" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19792499" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3567438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -314,34 +376,12 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/project" />
+    </ignored-roots>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project/bin/rails">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/models/application_record.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/users/index.json.jbuilder">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/users/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/users/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/controllers/registration_controller.rb" />
-    <entry file="file://$PROJECT_DIR$/project/app/controllers/session_controller.rb" />
-    <entry file="file://$PROJECT_DIR$/project/app/views/registration/index.html.erb" />
-    <entry file="file://$PROJECT_DIR$/project/app/views/session/index.html.erb" />
     <entry file="file://$PROJECT_DIR$/project/config/application.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -400,13 +440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/app/views/posts/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
@@ -416,13 +449,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app/models/admin.rb">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/controllers/profiles_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app/views/devise/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
@@ -450,33 +476,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/controllers/welcome_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/app/controllers/attachments_controller.rb">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="77" column="7" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="7" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app/controllers/users/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-28" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app/helpers/sessions_helper.rb">
@@ -525,10 +530,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/controllers/profiles_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-245">
+          <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="77" column="7" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/views/users/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/assets/javascripts/blacklists.coffee">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/assets/javascripts/cable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/assets/javascripts/welcome.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/assets/javascripts/welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/controllers/welcome_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/models/profile.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/app/views/welcome/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="820">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/assets/stylesheets/welcome.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
         </state>
       </provider>
     </entry>

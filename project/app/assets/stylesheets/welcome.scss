@@ -1,3 +1,54 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  font-family: verdana;
+  text-align: left;
+  position: relative;
+  left:-250px;
+  color: blue;
+}
+
+#header_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  background: red;
+}
+
+#user_container {
+  position: relative;
+  left: 933px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  background: green;
+  width: 300px;
+}
+
+#wall_options {
+  position: relative;
+  left: 933px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  background: blueviolet;
+  width: 300px;
+}
+
+#post_container2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: purple;
+  width: 700px;
+}
