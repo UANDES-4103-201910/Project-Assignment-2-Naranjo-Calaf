@@ -62,33 +62,42 @@ class UsersController < ApplicationController
     end
   end
 
+
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find(current_user.id)
     end
     #
-
-    def admin
-
-    end
+  #
     # # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :name)
     end
     #
-    # #View Posts
-    def user_posts
-      Post.where(user: User.find(params[:id]))
-    end
-    #
-    # #View Comments
-    def user_comments
-      Comment.where(user: User.find(params[:id]))
-    end
-    #
-    # #View Votes
-    def user_votes
-      Vote.where(user: User.find(params[:id]))
-    end
+    def admin
+        @admin = Admin.where(id: current_user.id)
+        if @admin == nil
+          false
+        else
+          true
+        end
+      end
+  #   # #View Posts
+  #   def user_posts
+  #     Post.where(user: User.find(params[:id]))
+  #   end
+  #   #
+  #   # #View Comments
+  #   def user_comments
+  #     Comment.where(user: User.find(params[:id]))
+  #   end
+  #   #
+  #   # #View Votes
+  #   def user_votes
+  #     Vote.where(user: User.find(params[:id]))
+  #   end
 end

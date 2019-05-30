@@ -8,8 +8,17 @@ class Ability
 
     if user.present?
        can :read, Post, user_id: user.id
-
     end
+
+    @admin = Admin.where(id: user.id)
+    if !@admin==nil
+      can :manage, :all
+    end
+    # if user.admin?
+    #   can :manage, :all
+    # else
+    #   can :read, :all
+    # end
 
     #   if user.admin?
     #     can :read, post

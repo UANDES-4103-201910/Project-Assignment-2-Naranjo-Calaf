@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   #TODO: IMPLEMENT CORRECTLY DEVICES  (NARANJO) //DONE
-  #TODO: Implement CANCANCAN (NARANJO)
+  #TODO: Implement CANCANCAN (NARANJO) //Penita
   #  authenticated :users do
   #    root to: 'session#create'
   #  end
@@ -41,14 +41,14 @@ Rails.application.routes.draw do
     end
 
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      root 'devise/sessions#new', as: :root_path
     end
   end
 
 
 
 
-  # TODO; REGISTRATION; Password Recovery( Show in Registration Pass Recovery, link to User/edit, and show only password)
+  # TODO; REGISTRATION; Password Recovery( Show in Registration Pass Recovery, link to User/edit, and show only password) //como devices esta implementado se usa edit_user_password
   # TODO: USER ADMINISTRATION: LAST ACCESS (No se como hacerlo)
   # TODO: USER ADMINISTRATION: User Role (Query Find id User in Admin Table , if Admin.Super = True SHow SUPER USER, Else: Admin, DEFAULT: User
   # TODO: SYSTEM ADMIN: View Post: Link to : Show posts where the id of the posts = id user logged in
