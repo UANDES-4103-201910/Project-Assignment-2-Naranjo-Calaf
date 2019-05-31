@@ -22,24 +22,12 @@
 <div id ="wall_options">
   <div class="options">
     Your Posts
-
-<!--    <%# @userposts.each do |post| %>  Show User posts-->
-<!--      <tr>-->
-<!--        <td><%#= post.user.name %></td>-->
-<!--        <td><%#= post.title %></td>-->
-<!--        <td><%#= post.description %></td>-->
-<!--        <td><%#= post.open %></td>-->
-<!--        <td><%#= post.location %></td>-->
-<!--        <td><%#= post.solved %></td>-->
-<!--        <td><%#= post.date %></td>-->
-<!--      </tr>-->
-    <%# end %>
   </div>
 </div>
 
 
-  <table id = "post_container2">
-    <thead>
+<table id = "post_container2">
+  <thead>
     <tr>
       <th>User</th>
       <th>Title</th>
@@ -50,39 +38,45 @@
       <th>Date</th>
       <th colspan="3"></th>
     </tr>
-    </thead>
+  </thead>
 
-    <tbody>
+  <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.user.name, post.user %></td>
-        <td><%= post.user.name %></td>
-        <td><%= post.title %></td>
-        <td><%= post.description %></td>
-        <td><%= post.open %></td>
-        <td><%= post.location %></td>
-        <td><%= post.solved %></td>
-        <td><%= post.date %></td>
+    <tr>
+      <td><%= link_to post.user.name, post.user %></td>
+      <td><%= post.user.name %></td>
+      <td><%= post.title %></td>
+      <td><%= post.description %></td>
+      <td><%= post.open %></td>
+      <td><%= post.location %></td>
+      <td><%= post.solved %></td>
+      <td><%= post.date %></td>
 
-        <td><%= link_to 'Comment', new_comment_path(post: post)%></td>
+      <td><%= link_to 'Comment', new_comment_path(post: post)%></td>
 
-        <!--if the user is logged in-->
-        <td><%= link_to 'Show Post', post %></td>
+      <!--if the user is logged in-->
+      <td><%= link_to 'Show Post', post %></td>
 
-        <% @comments.each do |comment| %>
-        <tr>
-          <td><%= link_to comment.user.name, post.user %></td>
-          <td><%= comment.comment %></td>
-        </tr>
-      <% end %>
-
-
-
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Comment</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @comments.each do |comment| %>
+            <tr>
+              <td><%= link_to comment.user.name, comment.user %></td>
+              <td><%= comment.comment %></td>
+            </tr>
+          <% end %>
+          </tbody>
       </tr>
     <% end %>
-
-    </tbody>
-  </table>
+    </br>
+  </tbody>
+</table>
 
 
 
