@@ -113,7 +113,7 @@ profiles=[Profile.new(user:users[0],picture:"1", biography:"bio1", city:"cityA",
 ]
 
 for prof in profiles
-  prof.save!
+  prof.save!¿
 end
 
 #Comments creator

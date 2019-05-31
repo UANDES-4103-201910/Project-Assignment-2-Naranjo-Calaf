@@ -20,6 +20,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+
   end
 
   # POST /profiles
@@ -72,6 +73,10 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:user_id, :picture, :biography, :city, :country)
     end
+
+  def set_profile_actual
+    @profile = Profile.find(current_user.id)
+  end
 
 
 end
