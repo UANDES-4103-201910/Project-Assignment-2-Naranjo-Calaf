@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-
+    @posts = Post.where(user: @profile.user.id)
   end
 
   # GET /profiles/new
@@ -74,9 +74,9 @@ class ProfilesController < ApplicationController
       params.require(:profile).permit(:user_id, :picture, :biography, :city, :country)
     end
 
-  def set_profile_actual
-    @profile = Profile.find(current_user.id)
-  end
+  # def set_profile_actual
+  #   @profile = Profile.find(current_user.id)
+  # end
 
 
 end

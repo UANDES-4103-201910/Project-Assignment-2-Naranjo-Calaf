@@ -64,9 +64,10 @@
         <td><%= post.solved %></td>
         <td><%= post.date %></td>
 
+        <td><%= link_to 'Comment', new_comment_path(post: post)%></td>
+
         <!--if the user is logged in-->
         <td><%= link_to 'Show Post', post %></td>
-        <td><%= link_to 'Comment', new_comment_path(post: post)%></td>
 
         <% @comments.each do |comment| %>
         <tr>
