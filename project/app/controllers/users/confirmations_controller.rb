@@ -6,6 +6,9 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   #   super
   # end
 
+  def destroy
+    session.delete(:user_id)
+  end
   # POST /resource/confirmation
   # def create
   #   super

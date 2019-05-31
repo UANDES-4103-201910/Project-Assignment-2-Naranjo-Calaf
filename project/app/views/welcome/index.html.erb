@@ -8,7 +8,7 @@
   <h1>Il Arrabiato</h1>
   <div class="topnav">
     <input type="text" placeholder="Search..">
-    <%= link_to 'Log Out', destroy_user_session_path%>
+    <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <img src= "/project/default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
   </div>
 </div>

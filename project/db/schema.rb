@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_05_24_022839) do
 
   create_table "blacklists", force: :cascade do |t|
     t.integer "user_id"
-    t.datetime "date", default: "2019-05-30 15:13:26"
+    t.datetime "date", default: "2019-05-31 21:58:07"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_blacklists_on_user_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_05_24_022839) do
 
   create_table "dumpsters", force: :cascade do |t|
     t.integer "post_id"
-    t.datetime "date", default: "2019-05-30 15:13:26"
+    t.datetime "date", default: "2019-05-31 21:58:07"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_dumpsters_on_post_id"
@@ -134,6 +134,8 @@ ActiveRecord::Schema.define(version: 2019_05_24_022839) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
