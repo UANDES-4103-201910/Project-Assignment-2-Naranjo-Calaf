@@ -10,7 +10,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post.user %>
+  <%= @post.user.name %>
 </p>
 
 <p>
@@ -46,5 +46,25 @@
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 
+<table>
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Comment</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
 
+  <tbody>
+  <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.user.name %></td>
+      <td><%= comment.comment %></td>
+      <td><%= link_to 'Show', comment %></td>
+      <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+      <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 </body>
