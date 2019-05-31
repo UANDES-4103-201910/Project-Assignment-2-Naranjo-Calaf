@@ -104,14 +104,14 @@ end
 
 
 #Profiles creator
-# profiles=[Profile.new(user:users[0],picture:"1", biography:"bio1", city:"city1", country:"country1"),
-#           Profile.new(user:users[1],picture:"2", biography:"bio2", city:"city2", country:"country2"),
-#           Profile.new(user:users[2],picture:"3", biography:"bio3", city:"city3", country:"country3"),
-#           Profile.new(user:users[3],picture:"4", biography:"bio4", city:"city4", country:"country4"),
-#           Profile.new(user:users[4],picture:"5", biography:"bio5", city:"city5", country:"country5"),
-#           Profile.new(user:users[5],picture:"6", biography:"bio6", city:"city6", country:"country6")
-# ]
-#
-# for prof in profiles
-#   prof.save!
-# end
+profiles=[Profile.new(user:users[0],picture:"1", biography:"bio1", city:"cityA", country:"countryA"),
+          Profile.new(user:users[1],picture:"2", biography:"bio2", city:"cityB", country:"countryB"),
+          Profile.new(user:users[2],picture:"3", biography:"bio3", city:"cityC", country:"countryC"),
+          Profile.new(user:users[3],picture:"4", biography:"bio4", city:"cityD", country:"countryD"),
+          Profile.new(user:users[4],picture:"5", biography:"bio5", city:"cityE", country:"countryE"),
+          Profile.new(user:users[5],picture:"6", biography:"bio6", city:"cityF", country:"countryF")
+]
+
+for prof in profiles
+  prof.save!
+end

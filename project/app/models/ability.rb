@@ -10,8 +10,10 @@ class Ability
        can :read, Post, user_id: user.id
     end
 
-    @admin = Admin.where(id: user.id)
-    if !@admin==nil
+    admin = Admin.where(id: user.id)
+    if admin==nil
+      cannot :manage, :all
+    else
       can :manage, :all
     end
     # if user.admin?

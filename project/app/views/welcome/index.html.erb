@@ -22,6 +22,18 @@
 <div id ="wall_options">
   <div class="options">
     Your Posts
+
+<!--    <%# @userposts.each do |post| %>  Show User posts-->
+<!--      <tr>-->
+<!--        <td><%#= post.user.name %></td>-->
+<!--        <td><%#= post.title %></td>-->
+<!--        <td><%#= post.description %></td>-->
+<!--        <td><%#= post.open %></td>-->
+<!--        <td><%#= post.location %></td>-->
+<!--        <td><%#= post.solved %></td>-->
+<!--        <td><%#= post.date %></td>-->
+<!--      </tr>-->
+    <%# end %>
   </div>
 </div>
 
@@ -52,13 +64,9 @@
         <td><%= post.date %></td>
 
         <!--if the user is logged in-->
-        <% if can? :read, @post %>
+        <td><%= link_to 'Show Post', post %></td>
+        <td><%= link_to 'Show User', post.user %></td>
 
-          <td><%= link_to 'Show', post %></td>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <%= link_to "View", @post %>
-        <% end %>
       </tr>
     <% end %>
     </tbody>

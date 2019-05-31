@@ -19,17 +19,7 @@ Rails.application.routes.draw do
 
   #TODO: IMPLEMENT CORRECTLY DEVICES  (NARANJO) //DONE
   #TODO: Implement CANCANCAN (NARANJO) //Penita
-  #  authenticated :users do
-  #    root to: 'session#create'
-  #  end
-  #
-  #  unauthenticated :users do
-  #    root to: 'sessions#new'
-  #  end
-  #
-  #
-  #
-  # #TODO: Implement authentication with google  (NARANJO)
+  #TODO: Implement authentication with google  (NARANJO)
   #
   # post '/login' => 'sessions#create', as: :log_in
   # delete '/log_out' => 'sessions#destroy', as: :log_out
@@ -41,7 +31,7 @@ Rails.application.routes.draw do
     end
 
     unauthenticated do
-      root 'devise/sessions#new', as: :root_path
+      root 'devise/sessions#new', as: :root
     end
   end
 

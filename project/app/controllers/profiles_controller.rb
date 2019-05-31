@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+
   end
 
   # GET /profiles/new
@@ -71,4 +72,6 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:user_id, :picture, :biography, :city, :country)
     end
+
+
 end

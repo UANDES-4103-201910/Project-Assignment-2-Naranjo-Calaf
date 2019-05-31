@@ -69,7 +69,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(current_user.id)
+      @user = User.find(params[:id])
     end
     #
   #
@@ -78,14 +78,14 @@ class UsersController < ApplicationController
       params.require(:user).permit(:email, :password, :name)
     end
     #
-    def admin
-        @admin = Admin.where(id: current_user.id)
-        if @admin == nil
-          false
-        else
-          true
-        end
+    def admin?
+      admin = Admin.where(id: current_user.id)
+      if admin == nil
+        false
+      else
+        true
       end
+    end
   #   # #View Posts
   #   def user_posts
   #     Post.where(user: User.find(params[:id]))
