@@ -115,3 +115,20 @@ profiles=[Profile.new(user:users[0],picture:"1", biography:"bio1", city:"cityA",
 for prof in profiles
   prof.save!
 end
+
+#Comments creator
+comments=[]
+
+for u in users
+  i = 0
+  for po in posts
+    comments << Comment.new(user: u, post: po, comment: "text"+u.id.to_s+po.id.to_s)
+    i += 1
+  end
+end
+
+for com in comments
+  com.save!
+end
+
+
