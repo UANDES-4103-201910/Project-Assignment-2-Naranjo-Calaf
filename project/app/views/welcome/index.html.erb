@@ -8,20 +8,31 @@
   <h1>Il Arrabiato</h1>
   <div class="topnav">
     <input type="text" placeholder="Search..">
-    <button class="TestBtn">Log Out</button>
+    <%= link_to 'Log Out', destroy_user_session_path%>
     <img src= "/project/default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
   </div>
 </div>
 
 <div id="user_container">
   <%= current_user.name %>
-  <button>Reclaim!</button>
+  <%= link_to 'Reclaim!', new_post_path%>
 
 </div>
 
 <div id ="wall_options">
   <div class="options">
-    Your Posts
+    <div>
+      <%= link_to 'Your Posts', new_post_path%>
+    </div>
+    <div>
+      <%= link_to 'Your Profile', profiles_path%>
+    </div>
+    <div>
+      <%= link_to 'Dumpster', dumpsters_path%>
+    </div>
+    <div>
+      <%= link_to 'Blacklist', blacklists_path%>
+    </div>
   </div>
 </div>
 
@@ -80,7 +91,6 @@
 
 
 
-</body>
 
 
 

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   # delete '/log_out' => 'sessions#destroy', as: :log_out
 
 
+
   devise_scope :user do
     authenticated :user do
       root 'welcome#index', as: :authenticated_root #TODO: move it to the homepage (CALAF)
