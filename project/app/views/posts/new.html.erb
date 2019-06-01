@@ -7,10 +7,16 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 </head>
 <body>
-<h1>Il Arrabiato</h1>
-<h2>New Post</h2>
 
-<%= render 'form', post: @post %>
+<div class="masthead">
+  <h1>Il Arrabiato</h1>
+</div>
 
-<%= link_to 'Back', profiles_url %>
+<div class="about-section">
+  <h2 align="center">New Post</h2>
+  <div align="center">
+    <%= render 'form', post: @post %>
+    <%= link_to 'Back', profiles_url %>
+  </div>
+</div>
 <body>

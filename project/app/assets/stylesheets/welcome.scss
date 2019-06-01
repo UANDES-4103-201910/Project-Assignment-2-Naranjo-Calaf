@@ -2,13 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-  font-family: verdana;
-  text-align: left;
-  position: relative;
-  left:-250px;
-  color: blue;
-}
 
 #header_container {
   display: flex;
@@ -16,7 +9,6 @@ h1 {
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
-  background: red;
 }
 
 #user_container {
@@ -27,7 +19,6 @@ h1 {
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
-  background: green;
   width: 300px;
 }
 
@@ -39,7 +30,6 @@ h1 {
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
-  background: blueviolet;
   width: 300px;
 }
 
@@ -49,7 +39,6 @@ h1 {
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: flex-start;
-  background: purple;
   width: 700px;
 }
 
