@@ -11,6 +11,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
      @posts = Post.where(user: @profile.user.id)
+
+     @comments = Comment.where(post: @posts.ids)
   end
 
   # GET /profiles/new

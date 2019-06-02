@@ -15,13 +15,14 @@
 </div>
 
 <script>
-    function togglecomments() {
-        var x = document.getElementsByClassName("commentviewer");
+    function HideShow() {
+        var element = document.getElementsByClassName("commentviewer");
 
-        if (x.display === "none") {
-            x.display = "block";
-        } else {
-            x.display = "none";
+        console.log(element)
+        if (element.display == "none"){
+            element.display ="block"
+        }else{
+            element.display ="none"
         }
     }
 </script>
@@ -37,10 +38,9 @@
     <div class="fakeimg" style="height:200px;">Image</div>
     <p><%= post.open%></p><p><%= post.solved %></p>
     <h4>COMMENTS</h4>
+    <button onclick="HideShow()">View Comments</button>
 
-    <button onclick="togglecomments()">View Comments</button>
-
-    <div class = "commentviewer" >
+    <div class = "commentviewer" id ="comments">
         <% @comments.each do |comment| %>
             <h2 style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></h2>
             <p ><%= comment.comment %></p >

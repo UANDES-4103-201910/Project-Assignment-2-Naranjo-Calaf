@@ -63,6 +63,7 @@
   clear: both;
 }
 .commentviewer{
+  //display: block;
   display: none;
   background-color: gray;
 }
@@ -71,3 +72,11 @@
   width: 100%;
   padding: 20px;
 }
+.toggle-content {
+  display: none;
+}
+
+.toggle-content.is-visible {
+  display: block;
+}
+
