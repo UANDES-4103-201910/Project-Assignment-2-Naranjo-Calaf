@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comments = Comment.where(post: @post.id)
+    @comments = Comment.where(post: @post.id).order("created at DESC")
   end
 
   # GET /posts/new
