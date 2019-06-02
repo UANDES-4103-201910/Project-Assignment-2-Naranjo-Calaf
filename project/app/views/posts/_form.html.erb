@@ -11,10 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+
 
   <div class="field">
     <%= form.label :title %>
@@ -26,25 +24,18 @@
     <%= form.text_area :description %>
   </div>
 
-  <div class="field">
-    <%= form.label :open %>
-    <%= form.text_field :open %>
-  </div>
+  <%= form.hidden_field :open, :value => true %>
+
 
   <div class="field">
     <%= form.label :location %>
     <%= form.text_field :location %>
   </div>
 
-  <div class="field">
-    <%= form.label :solved %>
-    <%= form.text_field :solved %>
-  </div>
+  <%= form.hidden_field :solved, :value => false %>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
-  </div>
+  <%= form.hidden_field :date, :value => DateTime.now %>
+
 
   <div class="actions">
     <%= form.submit %>
