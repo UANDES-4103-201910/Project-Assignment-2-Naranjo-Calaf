@@ -10,7 +10,7 @@
   <div class="topnav">
     <input type="text" placeholder="Search..">
     <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
-    <img src= "/project/default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
+    <img src= "default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
   </div>
 </div>
 
@@ -28,6 +28,8 @@
         }
     }
 </script>
+
+
 <div class="postviewer" style="float: left;">
   <div class="postview">
   <% @posts.each do |post| %>
@@ -38,10 +40,14 @@
     <p><%= post.location %></p>
     <h5><%= post.description %></h5>
     <div class="fakeimg" style="height:200px;">Image</div>
-    <p><%= post.open%></p><p><%= post.solved %></p>
+    <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
+    <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
+    <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
+    <p style="float: left;"><%= post.open%></p><p ><%= post.solved %></p>
+
+
     <h4>COMMENTS</h4>
     <button id="comment_button" onclick="HideShow()">View Comments</button>
-
     <div class = "commentviewer" id ="comments">
         <% @comments.each do |comment| %>
             <h2 style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></h2>

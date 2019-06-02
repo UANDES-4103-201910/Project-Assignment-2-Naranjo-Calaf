@@ -86,6 +86,12 @@
       <h5><%= post.description %></h5>
       <div class="fakeimg" style="height:200px;">Image</div>
       <p><%= post.open%></p><p><%= post.solved %></p>
+      <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
+      <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
+      <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
+      <p style="float: left;"><%= post.open%></p><p ><%= post.solved %></p>
+
+
       <h4>COMMENTS</h4>
 
       <button id="comment_button" onclick="HideShow()">View Comments</button>

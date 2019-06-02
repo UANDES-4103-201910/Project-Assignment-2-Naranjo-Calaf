@@ -62,6 +62,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def upvote
+    @post = Post.find(params[:id])
+    @post.vote.create(:user_id => current_user.id, :post_id =>@post.id, :vote => true )
+    redirect_to(root_path)
+  end
+  def downvote
+    @post = Post.find(params[:id])
+    @post.vote.create(:user_id => current_user.id, :post_id =>@post.id, :vote => false )
+    redirect_to(root_path)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

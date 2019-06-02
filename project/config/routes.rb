@@ -7,11 +7,16 @@ Rails.application.routes.draw do
   # resources :images
   # resources :attachments
   # resources :links
-  # resources :votes
+  resources :votes
   resources :blacklists
   resources :dumpsters
   # resources :innapropiates
-  resources :posts
+  resources :posts do
+    member do
+      post 'upvote'
+      post 'downvote'
+    end
+  end
   # resources :admins
   # resources :geofences
   resources :users
