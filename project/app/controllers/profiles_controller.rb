@@ -10,9 +10,9 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-     @posts = Post.where(user: @profile.user.id)
-     @comments = Comment.where(post: @posts.ids)
-    @votes = Vote.where(post: @posts.ids)
+     @posts = Post.where(user: @profile.user.id).order! 'created_at DESC'
+     @comments = Comment.where(post: @posts.ids).order! 'created_at DESC'
+    @votes = Vote.where(post: @posts.ids).order! 'created_at DESC'
   end
 
   # GET /profiles/new
