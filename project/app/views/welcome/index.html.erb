@@ -16,13 +16,14 @@
 
 <script>
     function HideShow() {
-        var element = document.getElementsByClassName("commentviewer");
-
-        console.log(element)
-        if (element.display == "none"){
-            element.display ="block"
-        }else{
-            element.display ="none"
+        var x = document.getElementById("comments");
+        var y = document.getElementById("comment_button");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.innerText = 'Hide'
+        } else {
+            x.style.display = "none";
+            y.innerText = 'View Comments'
         }
     }
 </script>
@@ -38,7 +39,7 @@
     <div class="fakeimg" style="height:200px;">Image</div>
     <p><%= post.open%></p><p><%= post.solved %></p>
     <h4>COMMENTS</h4>
-    <button onclick="HideShow()">View Comments</button>
+    <button id="comment_button" onclick="HideShow()">View Comments</button>
 
     <div class = "commentviewer" id ="comments">
         <% @comments.each do |comment| %>

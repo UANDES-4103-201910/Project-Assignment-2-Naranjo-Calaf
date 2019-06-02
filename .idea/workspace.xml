@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a1b9b8b9-3ad8-4e0d-8be9-2c4e45c9bcb8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/assets/stylesheets/main.css.scss" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/assets/stylesheets/main.css.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/assets/stylesheets/session.scss" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/assets/stylesheets/session.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/assets/stylesheets/welcome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/assets/stylesheets/welcome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/views/devise/passwords/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/devise/passwords/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/views/devise/registrations/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/devise/registrations/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/devise/sessions/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/views/posts/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/posts/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,30 +12,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/app/assets/stylesheets/main.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2100">
-              <caret line="100" column="20" lean-forward="true" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+            <state relative-caret-position="15">
+              <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project/app/views/posts/new.html.erb">
+        <entry file="file://$PROJECT_DIR$/project/app/views/welcome/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/app/views/devise/sessions/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="4" />
+            <state relative-caret-position="-142">
+              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -82,13 +66,13 @@
         <option value="$PROJECT_DIR$/project/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/project/app/assets/stylesheets/application.css.scss" />
         <option value="$PROJECT_DIR$/project/app/assets/stylesheets/welcome.scss" />
-        <option value="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" />
         <option value="$PROJECT_DIR$/project/app/assets/stylesheets/main.css.scss" />
         <option value="$PROJECT_DIR$/project/app/assets/stylesheets/session.scss" />
         <option value="$PROJECT_DIR$/project/app/views/devise/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/devise/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/devise/passwords/new.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/posts/new.html.erb" />
+        <option value="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" />
       </list>
     </option>
   </component>
@@ -104,6 +88,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -171,7 +156,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -364,12 +348,13 @@
       <workItem from="1559316430647" duration="1618000" />
       <workItem from="1559332940388" duration="4750000" />
       <workItem from="1559339763570" duration="589000" />
-      <workItem from="1559416238890" duration="6204000" />
+      <workItem from="1559416238890" duration="6891000" />
+      <workItem from="1559488297134" duration="2524000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56633000" />
+    <option name="totallyTimeSpent" value="59844000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -384,7 +369,7 @@
     <frame x="67" y="25" width="1299" height="638" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38228253" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3886672" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -397,7 +382,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32914573" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4971623" visible="true" weight="0.34774068" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4971623" visible="true" weight="0.34774068" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50283766" side_tool="true" weight="0.3488665" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -549,13 +534,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app/assets/stylesheets/application.css" />
-    <entry file="file://$PROJECT_DIR$/project/app/views/welcome/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/app/assets/stylesheets/admins.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -655,24 +633,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/assets/stylesheets/main.css.scss">
+    <entry file="file://$PROJECT_DIR$/project/app/views/posts/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2100">
-          <caret line="100" column="20" lean-forward="true" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+        <state relative-caret-position="180">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app/views/devise/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="4" />
+          <caret line="1" selection-start-line="1" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/posts/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/project/app/assets/stylesheets/main.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="15">
+          <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/views/welcome/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-142">
+          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
         </state>
       </provider>
     </entry>
