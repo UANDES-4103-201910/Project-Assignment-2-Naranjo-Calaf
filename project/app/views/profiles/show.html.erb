@@ -39,18 +39,21 @@
 <%= link_to 'New Post', new_post_path %>
 </button>
 
-<button>
-<%= link_to 'View Dumpster', dumpsters_path %>
-</button>
+<% if Admin.find_by_user_id(current_user.id) != nil%>
+  <button>
+    <%= link_to 'View Dumpster', dumpsters_path %>
+  </button>
 
-<button>
-<%= link_to 'View Blacklist ', blacklists_path %>
-</button>
+  <button>
+    <%= link_to 'View Blacklist ', blacklists_path %>
+  </button>
+<% end %>
+
 
 <table>
   <thead>
   <tr>
-    <th>User</th>
+<!--    <th>User</th>-->
     <th>Title</th>
     <th>Description</th>
     <th>Location</th>
@@ -62,8 +65,9 @@
   <tbody>
   <% @posts.each do |post| %>
     <tr>
-      <td><%= post.user.name %></td>
-      <td><%= post.title %></td>
+
+<!--      <td><%#= post.user.name %></td>-->
+     <td><%= link_to post.title, post_path(post) %></td>
       <td><%= post.description %></td>
       <td><%= post.location %></td>
       <td><%= post.date %></td>
@@ -75,7 +79,9 @@
   </tbody>
 </table>
 <div>
-  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <% if @profile.user.id == current_user.id%>
+    <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <% end %>
   <%= link_to 'Log Out', destroy_user_session_url %>
 </div>
 </body>

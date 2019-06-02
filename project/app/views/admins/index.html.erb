@@ -15,12 +15,14 @@
   <tbody>
     <% @admins.each do |admin| %>
       <tr>
-        <td><%= admin.user %></td>
-        <td><%= admin.geofence %></td>
+        <td><%= admin.user.name %></td>
+        <td><%= admin.geofence.region %></td>
         <td><%= admin.super %></td>
         <td><%= link_to 'Show', admin %></td>
-        <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
-        <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if Admin.find_by_user_id(current_user.id) != nil%>
+          <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
+          <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

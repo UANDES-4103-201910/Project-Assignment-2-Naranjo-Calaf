@@ -17,8 +17,11 @@
         <td><%= attachment.post %></td>
         <td><%= attachment.attachment %></td>
         <td><%= link_to 'Show', attachment %></td>
-        <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
-        <td><%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <% if Admin.find_by_user_id(current_user.id) != nil%>
+          <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
+          <td><%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

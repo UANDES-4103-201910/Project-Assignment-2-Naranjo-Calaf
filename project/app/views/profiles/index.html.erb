@@ -27,7 +27,8 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.user %></td>
+        <td><%= link_to profile.user.name, profile.user %></td>
+<!--        <td><%#= profile.user %></td>-->
         <td><%= profile.picture %></td>
         <td><%= profile.biography %></td>
         <td><%= profile.city %></td>
