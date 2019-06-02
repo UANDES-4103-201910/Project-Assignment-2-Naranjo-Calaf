@@ -61,7 +61,6 @@
     <% @posts.each do |post| %>
     <tr>
       <td><%= link_to post.user.name, profile_path(post.user) %></td>
-      <td><%= post.user.name %></td>
       <td><%= post.title %></td>
       <td><%= post.description %></td>
       <td><%= post.open %></td>
@@ -69,7 +68,7 @@
       <td><%= post.solved %></td>
       <td><%= post.date %></td>
 
-      <td><%= link_to 'Comment', new_comment_path(post: post)%></td>
+      <td><%= link_to 'Comment', new_comment_path(post_id: post.id)%></td>
 
       <!--if the user is logged in-->
       <td><%= link_to 'Show Post', post %></td>
