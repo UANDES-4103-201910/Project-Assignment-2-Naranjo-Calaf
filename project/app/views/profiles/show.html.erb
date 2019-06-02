@@ -60,6 +60,21 @@
   <% end %>
 </div>
 
+<script>
+    function HideShow() {
+        var x = document.getElementById("comments");
+        var y = document.getElementById("comment_button");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.innerText = 'Hide'
+        } else {
+            x.style.display = "none";
+            y.innerText = 'View Comments'
+        }
+    }
+</script>
+
+
 <div class="postviewer" style="float: left;">
   <div class="postview">
     <% @posts.each do |post| %>
@@ -73,9 +88,9 @@
       <p><%= post.open%></p><p><%= post.solved %></p>
       <h4>COMMENTS</h4>
 
-      <button onclick="togglecomments()">View Comments</button>
+      <button id="comment_button" onclick="HideShow()">View Comments</button>
 
-      <div class = "commentviewer" >
+      <div class = "commentviewer"  id="comments">
         <% @comments.each do |comment| %>
           <h2 style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></h2>
           <p ><%= comment.comment %></p >
