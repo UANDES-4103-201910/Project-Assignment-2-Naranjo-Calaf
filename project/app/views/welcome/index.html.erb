@@ -7,14 +7,19 @@
 <script>
     function HideShow() {
         var x = document.getElementById("comments");
-        var y = document.getElementsByClassName("comment_button");
+        var y = document.getElementById("comment_button");
         if (x.style.display === "none") {
             x.style.display = "block";
-            y.innerText = 'Hide'
+            y.innerText = 'Hide Comments'
         } else {
             x.style.display = "none";
             y.innerText = 'View Comments'
         }
+    }
+
+    function Search() {
+        var x = document.getElementById("Searchbar").value;
+        alert("Comming Soon!")
     }
 </script>
 
@@ -23,7 +28,8 @@
 <div class="masthead">
   <h1>Il Arrabiato</h1>
   <div class="topnav">
-    <input type="text" placeholder="Search..">
+    <input id="Searchbar" type="text" placeholder="Search..">
+    <input type="button" onclick="Search()" value="Search">
     <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <img src= "default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
   </div>
@@ -46,7 +52,7 @@
 
 
     <h4>COMMENTS</h4>
-    <button class ="comment_button" onclick="HideShow()">View Comments</button>
+    <button id="comment_button" onclick="HideShow()">View Comments</button>
     <div class = "commentviewer" id ="comments">
         <% @comments.each do |comment| %>
             <h2 style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></h2>
