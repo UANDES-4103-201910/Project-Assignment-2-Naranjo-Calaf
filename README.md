@@ -36,3 +36,5 @@ resourcemanager.projects.get"
         
 7) To start the evaluation, run in the terminal the next command:
             $ rails db:reset 
+            
+8) A new user will be a normal user and not admin by default
