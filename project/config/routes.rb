@@ -25,11 +25,6 @@ Rails.application.routes.draw do
 
 
   #TODO: Implement authentication with google  (NARANJO) //Failed
-  #
-  # post '/login' => 'sessions#create', as: :log_in
-  # delete '/log_out' => 'sessions#destroy', as: :log_out
-
-
 
   devise_scope :user do
 

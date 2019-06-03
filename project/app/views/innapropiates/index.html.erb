@@ -15,8 +15,8 @@
   <tbody>
     <% @innapropiates.each do |innapropiate| %>
       <tr>
-        <td><%= innapropiate.user %></td>
-        <td><%= innapropiate.post %></td>
+        <td><%= innapropiate.user.name %></td>
+        <td><%= innapropiate.post.title %></td>
         <td><%= innapropiate.coment %></td>
         <td><%= link_to 'Show', innapropiate %></td>
         <td><%= link_to 'Edit', edit_innapropiate_path(innapropiate) %></td>

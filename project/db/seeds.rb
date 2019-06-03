@@ -131,4 +131,13 @@ for com in comments
   com.save!
 end
 
+#Follows creator
+follows=[Follow.new(user:users[0], post:posts[3]),
+         Follow.new(user:users[0], post:posts[4]),
+         Follow.new(user:users[2], post:posts[1]),
+         Follow.new(user:users[2], post:posts[2]),
+]
 
+for fs in follows
+  fs.save!
+end
