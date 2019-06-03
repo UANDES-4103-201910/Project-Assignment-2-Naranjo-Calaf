@@ -34,6 +34,16 @@
   <strong>Country:</strong>
   <%= @profile.country %>
 </p>
+<p>
+  <strong>Role:</strong>
+  <%if (Admin.find_by_user_id(@profile.id)==nil)%>
+  User
+  <%elsif(Admin.find_by_user_id(@profile.id).super==false) %>
+    Admin
+  <%else %>
+    Super Admin
+  <%end%>
+</p>
 
 <% if @profile.user.id == current_user.id%>
   <button>
