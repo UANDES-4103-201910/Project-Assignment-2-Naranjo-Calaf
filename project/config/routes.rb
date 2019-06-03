@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   devise_for :users
   resources :comments
-  # resources :follows
+  resources :follows
   resources :profiles
   # resources :images
   # resources :attachments
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :votes
   resources :blacklists
   resources :dumpsters
-  # resources :innapropiates
+  resources :innapropiates
   resources :posts do
     member do
       post 'upvote'

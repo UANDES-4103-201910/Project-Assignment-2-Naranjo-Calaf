@@ -4,21 +4,10 @@
   <title>Il arrabiato</title>
 </head>
 
-<body>
-<div class="masthead">
-  <h1>Il Arrabiato</h1>
-  <div class="topnav">
-    <input type="text" placeholder="Search..">
-    <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
-    <img src= "default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
-  </div>
-</div>
-
-
 <script>
     function HideShow() {
         var x = document.getElementById("comments");
-        var y = document.getElementById("comment_button");
+        var y = document.getElementsByClassName("comment_button");
         if (x.style.display === "none") {
             x.style.display = "block";
             y.innerText = 'Hide'
@@ -29,6 +18,16 @@
     }
 </script>
 
+
+<body>
+<div class="masthead">
+  <h1>Il Arrabiato</h1>
+  <div class="topnav">
+    <input type="text" placeholder="Search..">
+    <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
+    <img src= "default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
+  </div>
+</div>
 
 <div class="postviewer" style="float: left;">
   <div class="postview">
@@ -47,7 +46,7 @@
 
 
     <h4>COMMENTS</h4>
-    <button id="comment_button" onclick="HideShow()">View Comments</button>
+    <button class ="comment_button" onclick="HideShow()">View Comments</button>
     <div class = "commentviewer" id ="comments">
         <% @comments.each do |comment| %>
             <h2 style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></h2>
@@ -62,18 +61,26 @@
   </div>
 </div>
 
-<div id="user_container">
-  <%= current_user.name %>
+<div align="center" id="user_container">
+  <b><%= current_user.name %></b>
   <%= link_to 'Reclaim!', new_post_path%>
 </div>
 
 <div id ="wall_options">
-  <div class="options">
+  <div align="center" class="options">
     <!--    <div>-->
     <%#= link_to 'Your Posts', new_post_path%>
     <!--    </div>-->
     <div>
       <%= link_to 'Your Profile', profile_path(id: current_user.id)%>
+    </div>
+    <div>
+      <%= link_to 'Followed', follows_path%>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Innapropiates',innapropiates_path%>
+      <% end %>
     </div>
     <div>
       <% if Admin.find_by_user_id(current_user.id) != nil%>
