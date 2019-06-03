@@ -69,7 +69,7 @@ class PostsController < ApplicationController
   end
   def downvote
     @post = Post.find(params[:id])
-    @post.vote.create(:user_id => current_user.id, :post_id =>@post.id, :vote => false )
+    @post.vote.create(:user_id => current_user.id, :post_id =>@post.id, :vote => true )
     redirect_to(root_path)
   end
 
