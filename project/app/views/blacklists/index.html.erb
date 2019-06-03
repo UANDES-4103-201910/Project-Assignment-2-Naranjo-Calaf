@@ -24,7 +24,7 @@
   <tbody>
     <% @blacklists.each do |blacklist| %>
       <tr>
-        <td><%= blacklist.user %></td>
+        <td><%= blacklist.user.name %></td>
         <td><%= blacklist.date %></td>
         <td><%= link_to 'Show', blacklist %></td>
         <td><%= link_to 'Edit', edit_blacklist_path(blacklist) %></td>
@@ -36,5 +36,6 @@
 
 <br>
 
-<%= link_to 'New Blacklist', new_blacklist_path %>
+<%= link_to 'New Blacklist', new_blacklist_path %>|
+<%= link_to 'Home', root_path %>
 </body>

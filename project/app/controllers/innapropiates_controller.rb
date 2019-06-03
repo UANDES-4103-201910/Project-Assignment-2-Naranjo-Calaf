@@ -4,7 +4,9 @@ class InnapropiatesController < ApplicationController
   # GET /innapropiates
   # GET /innapropiates.json
   def index
-    @innapropiates = Innapropiate.all
+    @innapropiates = Innapropiate.all.order! 'created_at DESC'
+    # @posts = Post.where(ids: @innapropiates).order! 'created_at DESC'
+    # @comments = Comment.where(post: @posts.ids).order! 'created_at DESC'
   end
 
   # GET /innapropiates/1
