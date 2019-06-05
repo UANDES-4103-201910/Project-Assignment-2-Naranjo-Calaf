@@ -9,14 +9,20 @@
 <body>
 
 <div class="masthead">
-  <h1>Il Arrabiato</h1>
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
+  <div class="topnav">
+    <input id="Searchbar" type="text" placeholder="Search..">
+    <input type="button" onclick="Search()" value="Search">
+    <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
+    <img src= "default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
+  </div>
 </div>
 
-<div class="about-section">
+<div class= "signup-section" style="height: 500px">
   <h2 align="center">New Post</h2>
   <div align="center">
     <%= render 'form', post: @post %>
     <%= link_to 'Back', root_url %>
   </div>
 </div>
-<body>
+</body>

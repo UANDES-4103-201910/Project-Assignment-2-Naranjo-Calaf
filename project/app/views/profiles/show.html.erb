@@ -6,74 +6,116 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 </head>
 <body>
-<h1>Il Arrabiato</h1>
 
-<p id="notice"><%= notice %></p>
+<div class="masthead">
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
+  <div class="topnav">
+    <input id="Searchbar" type="text" placeholder="Search..">
+    <input type="button" onclick="Search()" value="Search">
+    <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
+    <img src= "default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
+  </div>
+</div>
 
-<p>
-  <strong>User name:</strong>
-  <%= @profile.user.name %>
-</p>
+<div align="center" class="user_container">
+  <User><b><%= current_user.name %></b></User>
+  <%= link_to 'Reclaim!', new_post_path%>
+</div>
 
-<p>
-  <strong>Picture:</strong>
-  <%= @profile.picture %>
-</p>
+<div class ="wall_options">
+  <div align="center" class="options">
+    <div>
+      <%= link_to 'Your Profile', profile_path(id: current_user.id)%>
+    </div>
+    <div>
+      <%= link_to 'Followed', follows_path%>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Innapropiates',innapropiates_path%>
+      <% end %>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Dumpster', dumpsters_path %>
+      <% end %>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Blacklist', blacklists_path%>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Biography:</strong>
-  <%= @profile.biography %>
-</p>
+<div class="Profile_container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>City:</strong>
-  <%= @profile.city %>
-</p>
+  <p>
+    <strong>User name:</strong>
+    <%= @profile.user.name %>
+  </p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @profile.country %>
-</p>
-<p>
-  <strong>Role:</strong>
-  <%if (Admin.find_by_user_id(@profile.id)==nil)%>
-  User
-  <%elsif(Admin.find_by_user_id(@profile.id).super==false) %>
-    Admin
-  <%else %>
-    Super Admin
-  <%end%>
-</p>
+  <p>
+    <strong>Picture:</strong>
+    <%= @profile.picture %>
+  </p>
 
-<p>
-  <strong>Last Access:</strong>
-  <%= @profile.user.last_sign_in_at %>
-</p>
-<% if @profile.user.id == current_user.id%>
-  <button>
-    <%= link_to 'New Post', new_post_path %>
-  </button>
-<% end %>
+  <p>
+    <strong>Biography:</strong>
+    <%= @profile.biography %>
+  </p>
 
+  <p>
+    <strong>City:</strong>
+    <%= @profile.city %>
+  </p>
 
-<% if Admin.find_by_user_id(current_user.id) != nil%>
-  <button>
-    <%= link_to 'View Dumpster', dumpsters_path %>
-  </button>
+  <p>
+    <strong>Country:</strong>
+    <%= @profile.country %>
+  </p>
+  <p>
+    <strong>Role:</strong>
+    <%if (Admin.find_by_user_id(@profile.id)==nil)%>
+      User
+    <%elsif(Admin.find_by_user_id(@profile.id).super==false) %>
+      Admin
+    <%else %>
+      Super Admin
+    <%end%>
+  </p>
 
-  <button>
-    <%= link_to 'View Blacklist ', blacklists_path %>
-  </button>
-<% end %>
-
-<div>
+  <p>
+    <strong>Last Access:</strong>
+    <%= @profile.user.last_sign_in_at %>
+  </p>
   <% if @profile.user.id == current_user.id%>
-    <%= link_to 'Edit', edit_profile_path(@profile) %>|
-
-    <%= link_to 'Log Out', destroy_user_session_path %>|
+    <button>
+      <%= link_to 'New Post', new_post_path %>
+    </button>
   <% end %>
 
-  <%= link_to 'Home', root_path %>
+
+  <% if Admin.find_by_user_id(current_user.id) != nil%>
+    <button>
+      <%= link_to 'View Dumpster', dumpsters_path %>
+    </button>
+
+    <button>
+      <%= link_to 'View Blacklist ', blacklists_path %>
+    </button>
+  <% end %>
+
+  <div>
+    <% if @profile.user.id == current_user.id%>
+      <%= link_to 'Edit', edit_profile_path(@profile) %>|
+
+      <%= link_to 'Log Out', destroy_user_session_path %>|
+    <% end %>
+
+    <%= link_to 'Home', root_path %>
+  </div>
 </div>
 
 <script>

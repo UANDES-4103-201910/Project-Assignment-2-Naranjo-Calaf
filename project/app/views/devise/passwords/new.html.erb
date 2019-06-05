@@ -3,7 +3,7 @@
   <h1>Il Arrabiato</h1>
 </div>
 
-<div class="signup-section">
+<div class="signup-section" style="height: 500px">
   <h2 align="center">Forgot your password?</h2>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>

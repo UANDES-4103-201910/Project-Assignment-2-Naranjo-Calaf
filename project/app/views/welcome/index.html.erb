@@ -19,14 +19,15 @@
 
     function Search() {
         var x = document.getElementById("Searchbar").value;
-        alert("Comming Soon!")
+        var y = document.getElementsByTagName("test");
+        alert(y[0].innerText)
     }
 </script>
 
 
 <body>
 <div class="masthead">
-  <h1>Il Arrabiato</h1>
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
   <div class="topnav">
     <input id="Searchbar" type="text" placeholder="Search..">
     <input type="button" onclick="Search()" value="Search">
@@ -35,12 +36,13 @@
   </div>
 </div>
 
+
 <div class="postviewer" style="float: left;">
   <div class="postview">
-  <% @posts.each do |post| %>
+  <post><% @posts.each do |post| %></post>
 
-    <h1><%= link_to post.user.name, profile_path(post.user) %></h1>
-    <h2><%= post.title %></h2>
+    <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
+    <h3><%= post.title %></h3>
     <p><%= post.date %></p>
     <p><%= post.location %></p>
     <h5><%= post.description %></h5>
@@ -67,12 +69,12 @@
   </div>
 </div>
 
-<div align="center" id="user_container">
-  <b><%= current_user.name %></b>
+<div align="center" class="user_container">
+  <User><b><%= current_user.name %></b></User>
   <%= link_to 'Reclaim!', new_post_path%>
 </div>
 
-<div id ="wall_options">
+<div class ="wall_options">
   <div align="center" class="options">
     <div>
       <%= link_to 'Your Profile', profile_path(id: current_user.id)%>
