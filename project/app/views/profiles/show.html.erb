@@ -110,8 +110,6 @@
   <div>
     <% if @profile.user.id == current_user.id%>
       <%= link_to 'Edit', edit_profile_path(@profile) %>|
-
-      <%= link_to 'Log Out', destroy_user_session_path %>|
     <% end %>
 
     <%= link_to 'Home', root_path %>
