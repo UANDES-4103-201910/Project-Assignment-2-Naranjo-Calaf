@@ -28,6 +28,7 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
+    @user = User.where(user_id: current_user.id)
     @profile = Profile.new(profile_params)
 
     respond_to do |format|
@@ -73,7 +74,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:user_id, :picture, :biography, :city, :country)
+      params.require(:profile).permit(:user_id, :picture, :biography, :city, :country, :profile_img)
     end
 
   # def set_profile_actual

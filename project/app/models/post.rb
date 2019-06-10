@@ -8,6 +8,9 @@ class Post < ApplicationRecord
   has_many :link
   has_many :vote
   has_one :dumpster
+
+  has_one_attached :post_img
+
   validates :title, presence: true
   validates :description, presence: true
 end

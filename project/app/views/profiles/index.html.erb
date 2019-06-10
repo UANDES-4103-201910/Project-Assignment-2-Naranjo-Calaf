@@ -23,7 +23,9 @@
       <p><%= post.date %></p>
       <p><%= post.location %></p>
       <h5><%= post.description %></h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
+      <% if image_tag(post.post_img) != nil %>
+        <p><%=image_tag(post.post_img, class:"image-responsive", :size =>"220x150") %></p>
+      <% end %>
       <p><%= post.open%></p><p><%= post.solved %></p>
       <div><%= pluralize(post.vote.count, "vote") %></div>
       <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
@@ -64,7 +66,8 @@
       <tr>
         <td><%= link_to profile.user.name, profile.user %></td>
 <!--        <td><%#= profile.user %></td>-->
-        <td><%= profile.picture %></td>
+<!--        <td><%#= profile.picture %></td>-->
+        <td><%=image_tag(profile.profile_img, class:"image-responsive", :size =>"220x150") %></td>
         <td><%= profile.biography %></td>
         <td><%= profile.city %></td>
         <td><%= profile.country %></td>

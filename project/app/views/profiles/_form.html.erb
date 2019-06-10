@@ -11,15 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+<!--  <div class="field">-->
+    <%#= form.label :user_id => current_user   %>
+    <%#= form.text_field :user_id => current_user  %>
+<!--  </div>-->
 
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.text_field :picture %>
-  </div>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+
 
   <div class="field">
     <%= form.label :biography %>
@@ -35,6 +33,8 @@
     <%= form.label :country %>
     <%= form.text_field :country %>
   </div>
+
+  <%= form.file_field :profile_img %>
 
   <div class="actions">
     <%= form.submit %>
