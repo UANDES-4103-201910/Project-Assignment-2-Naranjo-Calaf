@@ -49,6 +49,11 @@
     <% if post.post_img.nil? %>
       <p><%=image_tag(post.post_img, class:"image-responsive", :size =>"220x150") %></p>
     <% end %>
+    <%# if post.latitude.nil? or post.longitude.nil? %>
+<!--        <p><%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{post.latitude},#{post.longitude}&key=#{AIzaSyDpeoMD25ptcMtu7D1njX9bp0xyPBjW-vA}", alt: "Map" %></p>-->
+    <%# end %>
+
+
     <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
     <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
     <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>

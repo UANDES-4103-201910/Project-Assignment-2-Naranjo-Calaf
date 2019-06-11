@@ -26,6 +26,8 @@
       <% if image_tag(post.post_img) != nil %>
         <p><%=image_tag(post.post_img, class:"image-responsive", :size =>"220x150") %></p>
       <% end %>
+
+
       <p><%= post.open%></p><p><%= post.solved %></p>
       <div><%= pluralize(post.vote.count, "vote") %></div>
       <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>

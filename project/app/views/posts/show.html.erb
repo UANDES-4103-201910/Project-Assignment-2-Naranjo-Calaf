@@ -42,6 +42,25 @@
   <strong>Date:</strong>
   <%= @post.date %>
 </p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @post.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @post.longitude %>
+</p>
+<% provide :head_tags do %>
+  <script>
+      document.addEventListener("DOMContentLoaded", function(){
+          initMap(<%=@post.latitude%>, <%=@post.longitude%>)
+      });
+  </script>
+<% end %>
+<p>
+  <div id="map"></div>
+</p>
+
 <div><%= pluralize(@post.vote.where(vote: true).count, "upvotes") %></div>
 <div><%= pluralize(@post.vote.where(vote: false).count, "downvotes") %></div>
 <p style="float: left;"><%= button_to '+1', upvote_post_path(@post), method: :post %></p><p><%= button_to '-1', downvote_post_path(@post), method: :post %></p>
