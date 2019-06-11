@@ -42,9 +42,18 @@
   <strong>Date:</strong>
   <%= @post.date %>
 </p>
+<div><%= pluralize(@post.vote.where(vote: true).count, "upvotes") %></div>
+<div><%= pluralize(@post.vote.where(vote: false).count, "downvotes") %></div>
+<p style="float: left;"><%= button_to '+1', upvote_post_path(@post), method: :post %></p><p><%= button_to '-1', downvote_post_path(@post), method: :post %></p>
+<p style="float: left;"><%= @post.open%></p><p ><%= @post.solved %></p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div>
+  <% if @post.user.id == current_user.id%>
+    <%= link_to 'Edit', edit_post_path(@post) %>|
+  <% end %>
+
+  <%= link_to 'Home', root_path %>
+</div>
 
 <table>
   <thead>

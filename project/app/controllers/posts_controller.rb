@@ -10,7 +10,9 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comments = Comment.where(post: @post.id).order("created at DESC")
+
+    @post = Post.find(params[:id])
+    @comments = Comment.where(post_id: @post.id).order! 'created_at DESC'
   end
 
   # GET /posts/new
@@ -64,13 +66,23 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
+
+    @vote = Vote.find_by(user_id: current_user.id, post_id: @post.id)
+    if @vote != nil
+      @vote.destroy
+    end
     @post.vote.create(:user_id => current_user.id, :post_id =>@post.id, :vote => true )
-    redirect_to(root_path)
+    redirect_to(post_url(@post))
   end
+
   def downvote
     @post = Post.find(params[:id])
+    @vote = Vote.find_by(user_id: current_user.id, post_id: @post.id)
+    if @vote != nil
+      @vote.destroy
+    end
     @post.vote.create(:user_id => current_user.id, :post_id =>@post.id, :vote => false )
-    redirect_to(root_path)
+    redirect_to(post_url(@post))
   end
 
   private
