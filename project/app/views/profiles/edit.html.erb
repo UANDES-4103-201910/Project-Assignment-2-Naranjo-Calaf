@@ -7,10 +7,24 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 </head>
 <body>
-<h1>Il Arrabiato</h1>
-<h2>Edit Profile</h2>
 
-<%= render 'form', profile: @profile %>
+<div class="masthead">
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
+  <div class="topnav">
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search" %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to 'Back', @profile %> |
+<div class=" edit-profile-section">
+  <h2 align="center">Edit Profile</h2>
+  <div align="center">
+    <%= render 'form', profile: @profile %>
+    <%= link_to 'Back', @profile %>
+  </div>
+</div>
+
 </body>

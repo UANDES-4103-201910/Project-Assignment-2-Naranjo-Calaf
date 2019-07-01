@@ -100,7 +100,7 @@ body{background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 2
 .masthead {
   position: relative;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.3)), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url("../img/bg-masthead.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/bg-masthead.jpg");
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.2) 30%, rgba(22, 22, 22, 0.4) 80%, #161616 100%), url("../img/bg-masthead.jpg");
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -129,9 +129,8 @@ body{background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 2
 .wall_options {
   border-radius: 25px;
   position: relative;
-  top: 30px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.3)), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url("../img/bg-masthead.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/bg-masthead.jpg");
+  top: 150px;
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.2) 20%, rgba(22, 22, 22, 0.4) 70%, #161616 100%), url("../img/bg-masthead.jpg");
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -142,15 +141,15 @@ body{background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 2
 .user_container {
   border-radius: 25px;
   position: relative;
-  top: 15px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.3)), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url("../img/bg-masthead.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/bg-masthead.jpg");
+  top: 100px;
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.2) 20%, rgba(22, 22, 22, 0.4) 70%, #161616 100%), url("../img/bg-masthead.jpg");
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: normal;
+  align-items: center;
 }
+
 
 .btn {
   -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
@@ -224,7 +223,7 @@ body{background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 2
 .signup-section {
   padding: 10rem 0;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/bg-signup.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-signup.jpg");
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/bg-signup.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -243,36 +242,44 @@ body{background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 2
   border: 0;
 }
 
-.postviewer{
-  border-radius: 25px;
-}
-
-.postview {
-  border-radius: 25px;
+.new_post-section {
   padding: 10rem 0;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/bg-signup.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-signup.jpg");
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 50%, rgba(22, 22, 22, 0.3) 95%, #161616 100%), url("../img/bg-signup.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
 }
 
-.postview .form-inline input {
-  -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  padding: 1.25rem 2rem;
-  height: auto;
-  font-family: 'Varela Round';
-  font-size: 80%;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  border: 0;
+.edit-profile-section {
+  padding: 10rem 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/bg-signup.jpg");
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 50%, rgba(22, 22, 22, 0.3) 95%, #161616 100%), url("../img/bg-signup.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.profile_container{
+  background: transparent;
+}
+
+.postview {
+  border-radius: 25px;
+  background: darkgray;
 }
 
 .postviewer {
-  background: -webkit-gradient(linear, left top, left bottom, from(#161616), color-stop(75%, rgba(22, 22, 22, 0.9)), to(rgba(22, 22, 22, 0.8)));
-  background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+  background: transparent;
+}
+
+.separator{
+  position: absolute;
+  left: -35px;
+  width: 1000px;
+  background: lightgray;
 }
 
 .contact-section {

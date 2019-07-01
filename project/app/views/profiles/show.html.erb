@@ -10,45 +10,16 @@
 <div class="masthead">
   <h1><%= link_to "Il Arrabiato", root_path %></h1>
   <div class="topnav">
-    <input id="Searchbar" type="text" placeholder="Search..">
-    <input type="button" onclick="Search()" value="Search">
-    <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
-    <img src= "default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search" %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
+    <% end %>
   </div>
 </div>
 
-<div align="center" class="user_container">
-  <User><b><%= current_user.name %></b></User>
-  <%= link_to 'Reclaim!', new_post_path%>
-</div>
-
-<div class ="wall_options">
-  <div align="center" class="options">
-    <div>
-      <%= link_to 'Your Profile', profile_path(id: current_user.id)%>
-    </div>
-    <div>
-      <%= link_to 'Followed', follows_path%>
-    </div>
-    <div>
-      <% if Admin.find_by_user_id(current_user.id) != nil%>
-        <%= link_to 'Innapropiates',innapropiates_path%>
-      <% end %>
-    </div>
-    <div>
-      <% if Admin.find_by_user_id(current_user.id) != nil%>
-        <%= link_to 'Dumpster', dumpsters_path %>
-      <% end %>
-    </div>
-    <div>
-      <% if Admin.find_by_user_id(current_user.id) != nil%>
-        <%= link_to 'Blacklist', blacklists_path%>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="Profile_container">
+<div class= "postviewer">
+  <h2>Profile Information</h2>
   <p id="notice"><%= notice %></p>
 
   <p>
@@ -90,22 +61,6 @@
     <strong>Last Access:</strong>
     <%= @profile.user.last_sign_in_at %>
   </p>
-  <% if @profile.user.id == current_user.id%>
-    <button>
-      <%= link_to 'New Post', new_post_path %>
-    </button>
-  <% end %>
-
-
-  <% if Admin.find_by_user_id(current_user.id) != nil%>
-    <button>
-      <%= link_to 'View Dumpster', dumpsters_path %>
-    </button>
-
-    <button>
-      <%= link_to 'View Blacklist ', blacklists_path %>
-    </button>
-  <% end %>
 
   <div>
     <% if @profile.user.id == current_user.id%>
@@ -113,6 +68,45 @@
     <% end %>
 
     <%= link_to 'Home', root_path %>
+  </div>
+</div>
+
+<div align="center" class="user_container">
+  <User><b><%= current_user.name %></b></User>
+  <button style="width: 100px">
+    <%= link_to 'Reclaim!', new_post_path%>
+  </button>
+</div>
+
+<div class ="wall_options">
+  <div align="center" class="options">
+    <div>
+      <%if current_user.id == nil %>
+        <%= link_to 'Your Profile', root_path%>
+      <%elsif Profile.find_by_user_id(current_user.id) == nil%>
+        <%= link_to 'Your Profile', new_profile_path(user_id: current_user.id)%>
+      <%else %>
+        <%= link_to 'Your Profile', profile_path(current_user.id)%>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to 'Followed', follows_path%>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Innapropiates',innapropiates_path%>
+      <% end %>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Dumpster', dumpsters_path %>
+      <% end %>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Blacklist', blacklists_path%>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -156,10 +150,13 @@
 
       <div class = "commentviewer"  id="comments">
         <% @comments.each do |comment| %>
-          <h2 style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></h2>
+          <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
           <p ><%= comment.comment %></p >
           <br style="clear: left">
         <% end %>
+      </div>
+      <div class="separator">
+        </br>
       </div>
     <% end %>
     </br>

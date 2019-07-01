@@ -6,95 +6,113 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 </head>
 <body>
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.name %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-
-<p>
-  <strong>Open:</strong>
-  <%= @post.open %>
-  # TODO: SEARCH: Nickname (Where User.name = @nickname)
-  # TODO: SEARCH: LOCATION (Where User.name = @location)
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @post.location %>
-</p>
-
-<p>
-  <strong>Solved:</strong>
-  <%= @post.solved %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @post.date %>
-</p>
-<p>
-  <strong>Latitude:</strong>
-  <%= @post.latitude %>
-</p>
-<p>
-  <strong>Longitude:</strong>
-  <%= @post.longitude %>
-</p>
-<% provide :head_tags do %>
-  <script>
-      document.addEventListener("DOMContentLoaded", function(){
-          initMap(<%=@post.latitude%>, <%=@post.longitude%>)
-      });
-  </script>
-<% end %>
-<p>
-  <div id="map"></div>
-</p>
-
-<div><%= pluralize(@post.vote.where(vote: true).count, "upvotes") %></div>
-<div><%= pluralize(@post.vote.where(vote: false).count, "downvotes") %></div>
-<p style="float: left;"><%= button_to '+1', upvote_post_path(@post), method: :post %></p><p><%= button_to '-1', downvote_post_path(@post), method: :post %></p>
-<p style="float: left;"><%= @post.open%></p><p ><%= @post.solved %></p>
-
-<div>
-  <% if @post.user.id == current_user.id%>
-    <%= link_to 'Edit', edit_post_path(@post) %>|
-  <% end %>
-
-  <%= link_to 'Home', root_path %>
+<div class="masthead">
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
+  <div class="topnav">
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search" %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
+    <% end %>
+  </div>
 </div>
 
-<table>
-  <thead>
-  <tr>
-    <th>User</th>
-    <th>Comment</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+<div class="new_post-section" style="height: 1200px">
+  <h2 align="center">Show Post</h2>
+  <br>
+  <div align="center">
+    <p id="notice"><%= notice %></p>
 
-  <tbody>
-  <% @comments.each do |comment| %>
-    <tr>
-      <td><%= comment.user.name %></td>
-      <td><%= comment.comment %></td>
-      <td><%= link_to 'Show', comment %></td>
-      <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-      <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+    <p>
+      <strong>User:</strong>
+      <%= @post.user.name %>
+    </p>
+
+    <p>
+      <strong>Title:</strong>
+      <%= @post.title %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @post.description %>
+    </p>
+
+    <p>
+      <strong>Open:</strong>
+      <%= @post.open %>
+      # TODO: SEARCH: Nickname (Where User.name = @nickname)
+      # TODO: SEARCH: LOCATION (Where User.name = @location)
+    </p>
+
+    <p>
+      <strong>Location:</strong>
+      <%= @post.location %>
+    </p>
+
+    <p>
+      <strong>Solved:</strong>
+      <%= @post.solved %>
+    </p>
+
+    <p>
+      <strong>Date:</strong>
+      <%= @post.date %>
+    </p>
+    <p>
+      <strong>Latitude:</strong>
+      <%= @post.latitude %>
+    </p>
+    <p>
+      <strong>Longitude:</strong>
+      <%= @post.longitude %>
+    </p>
+    <% provide :head_tags do %>
+      <script>
+          document.addEventListener("DOMContentLoaded", function(){
+              initMap(<%=@post.latitude%>, <%=@post.longitude%>)
+          });
+      </script>
+    <% end %>
+    <p>
+    <div id="map"></div>
+    </p>
+
+    <div><%= pluralize(@post.vote.where(vote: true).count, "upvotes") %></div>
+    <div><%= pluralize(@post.vote.where(vote: false).count, "downvotes") %></div>
+    <p style="float: left;"><%= button_to '+1', upvote_post_path(@post), method: :post %></p><p><%= button_to '-1', downvote_post_path(@post), method: :post %></p>
+    <p style="float: left;"><%= @post.open%></p><p ><%= @post.solved %></p>
+
+    <div>
+      <% if @post.user.id == current_user.id%>
+        <%= link_to 'Edit', edit_post_path(@post) %>|
+      <% end %>
+      <%= link_to 'Home', root_path %>
+    </div>
+
+    <table>
+      <thead>
+      <tr>
+        <th>User</th>
+        <th>Comment</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @comments.each do |comment| %>
+        <tr>
+          <td><%= comment.user.name %></td>
+          <td><%= comment.comment %></td>
+          <td><%= link_to 'Show', comment %></td>
+          <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+          <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 </body>

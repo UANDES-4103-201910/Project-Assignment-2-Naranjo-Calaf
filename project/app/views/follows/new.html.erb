@@ -1,5 +1,31 @@
-<h1>New Follow</h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>
+    New_Follow
+  </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
 
-<%= render 'form', follow: @follow %>
+<body>
+<div class="masthead">
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
+  <div class="topnav">
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search" %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to 'Back', follows_path %>
+<div class="new_post-section" style="height: 500px">
+  <h2 align="center">New Follow</h2>
+  <div align="center">
+    <%= render 'form', follow: @follow %>
+    <%= link_to 'Back', follows_path %>
+  </div>
+</div>
+
+</body>
+

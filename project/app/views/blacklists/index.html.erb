@@ -7,35 +7,49 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 </head>
 <body>
-<p id="notice"><%= notice %></p>
 
-<h1>Il Arrabiato</h1>
-<h2>Blacklists</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blacklists.each do |blacklist| %>
-      <tr>
-        <td><%= blacklist.user.name %></td>
-        <td><%= blacklist.date %></td>
-        <td><%= link_to 'Show', blacklist %></td>
-        <td><%= link_to 'Edit', edit_blacklist_path(blacklist) %></td>
-        <td><%= link_to 'Destroy', blacklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="masthead">
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
+  <div class="topnav">
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search" %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
-<br>
+<div class="new_post-section" style="height: 500px">
+  <p id="notice"><%= notice %></p>
+  <h2 align="center">Blacklists</h2>
+  <br>
+  <div align="center">
+    <table>
+      <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
 
-<%= link_to 'New Blacklist', new_blacklist_path %>|
-<%= link_to 'Home', root_path %>
+      <tbody>
+      <% @blacklists.each do |blacklist| %>
+        <tr>
+          <td><%= blacklist.user.name %></td>
+          <td><%= blacklist.date %></td>
+          <td><%= link_to 'Show', blacklist %></td>
+          <td><%= link_to 'Edit', edit_blacklist_path(blacklist) %></td>
+          <td><%= link_to 'Destroy', blacklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Blacklist', new_blacklist_path %>|
+    <%= link_to 'Home', root_path %>
+  </div>
+</div>
 </body>

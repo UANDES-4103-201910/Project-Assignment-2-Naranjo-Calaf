@@ -32,9 +32,8 @@
     <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
       <%= submit_tag "Search" %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <% end %>
-    <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
-    <img src= "default-user1.png" alt="generic-user"> <!-- Don't know why is not working -->
   </div>
 </div>
 
@@ -72,7 +71,7 @@
         <% end %>
     </div>
     <div class="separator">
-        </br>
+        <br>
     </div>
     <% end %>
   </div>
@@ -80,7 +79,9 @@
 
 <div align="center" class="user_container">
   <User><b><%= current_user.name %></b></User>
-  <%= link_to 'Reclaim!', new_post_path%>
+  <button style="width: 100px">
+    <%= link_to 'Reclaim!', new_post_path%>
+  </button>
 </div>
 
 <div class ="wall_options">
@@ -114,4 +115,4 @@
     </div>
   </div>
 </div>
-
+</body>
