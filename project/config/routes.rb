@@ -39,6 +39,5 @@ Rails.application.routes.draw do
   # TODO: SYSTEM ADMIN: View Post: Link to : Show posts where the id of the posts = id user logged in
   # TODO: POSTS: Inappropiate Show Posts where Inapropiate.post.id = @post.id)
   # TODO: (X) Tag User
-  # TODO: SEARCH: Nickname (Where User.name = @nickname)
-  # TODO: SEARCH: LOCATION (Where User.name = @location)
+
 end

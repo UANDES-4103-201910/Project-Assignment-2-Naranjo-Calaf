@@ -113,6 +113,11 @@
         <%= link_to 'Blacklist', blacklists_path%>
       <% end %>
     </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'User managment', users_path%>
+      <% end %>
+    </div>
   </div>
 </div>
 </body>

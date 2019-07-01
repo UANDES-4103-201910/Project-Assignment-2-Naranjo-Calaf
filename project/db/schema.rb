@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_022029) do
 
   create_table "blacklists", force: :cascade do |t|
     t.integer "user_id"
-    t.datetime "date", default: "2019-05-31 21:58:07"
+    t.datetime "date", default: "2019-07-01 22:25:40"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_blacklists_on_user_id"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_022029) do
 
   create_table "dumpsters", force: :cascade do |t|
     t.integer "post_id"
-    t.datetime "date", default: "2019-05-31 21:58:07"
+    t.datetime "date", default: "2019-07-01 22:25:40"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_dumpsters_on_post_id"
