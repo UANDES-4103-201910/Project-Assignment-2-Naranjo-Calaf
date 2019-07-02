@@ -22,6 +22,8 @@
         var y = document.getElementsByTagName("test");
         alert(y[0].innerText)
     }
+
+
 </script>
 
 
@@ -43,7 +45,7 @@
   <post><% @posts.each do |post| %></post>
 
     <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
-    <h3><%= post.title %></h3>
+    <h3><%= link_to post.title, post_path(post) %></h3>
     <p><%= post.date %></p>
     <p><%= post.location %></p>
     <h5><%= post.description %></h5>
@@ -63,6 +65,10 @@
 
     <h4>COMMENTS</h4>
     <button id="comment_button" onclick="HideShow()">View Comments</button>
+    <div>
+
+      <%= button_to "Comment", new_comment_path(post_id:  post.id) %>
+    </div>
     <div class = "commentviewer" id ="comments">
         <% @comments.each do |comment| %>
             <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>

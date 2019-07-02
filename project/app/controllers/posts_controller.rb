@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @comment = Comment.new(post_id: params[:post_id])
   end
 
   # GET /posts/1/edit
@@ -70,7 +71,6 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-
     @vote = Vote.find_by(user_id: current_user.id, post_id: @post.id)
     if @vote != nil
       @vote.destroy

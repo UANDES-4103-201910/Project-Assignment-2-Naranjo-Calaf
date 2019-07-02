@@ -14,7 +14,12 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new(post_id: params[:post_id])
+    @post = Post.find(params[:id])
+    @comment = Comment.new(post_id: @post)
+    # @text =
+    # @post = Post.find(params[:id])
+    # @comment = Comment.find_by(user_id: current_user.id, post_id: @post, comment: @text)
+    # @comment.create(:user_id => current_user.id, :post_id =>@post, :comment => nil )
 
   end
 
@@ -66,6 +71,10 @@ class CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
+    end
+
+    def set_post
+      @post = Post.find_by(post_id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
