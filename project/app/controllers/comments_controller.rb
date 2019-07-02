@@ -14,12 +14,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @post = Post.find(params[:id])
-    @comment = Comment.new(post_id: @post)
-    # @text =
-    # @post = Post.find(params[:id])
-    # @comment = Comment.find_by(user_id: current_user.id, post_id: @post, comment: @text)
-    # @comment.create(:user_id => current_user.id, :post_id =>@post, :comment => nil )
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new(post_id: @post, user_id: current_user.id)
 
   end
 
@@ -41,6 +37,7 @@ class CommentsController < ApplicationController
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
+    redirect_to post_path(@post)
   end
 
   # PATCH/PUT /comments/1
@@ -65,6 +62,7 @@ class CommentsController < ApplicationController
       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
+    redirect_to post_path(@post)
   end
 
   private
@@ -73,11 +71,8 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
     end
 
-    def set_post
-      @post = Post.find_by(post_id: params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
       params.require(:comment).permit(:user_id, :post_id, :comment)
     end

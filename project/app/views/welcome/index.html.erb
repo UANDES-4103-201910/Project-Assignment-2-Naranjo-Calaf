@@ -69,18 +69,17 @@
 
 
     <h4>COMMENTS</h4>
-    <button id="comment_button" onclick="HideShow()">View Comments</button>
-    <div>
+      <div>
+        <%= button_to "Comment", new_comment_path(post_id:  post.id) %>
+      </div>
 
-      <%= button_to "Comment", new_comment_path(post_id:  post.id) %>
-    </div>
-    <div class = "commentviewer" id ="comments">
-        <% @comments.each do |comment| %>
-            <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
-            <p ><%= comment.comment %></p >
-            <br style="clear: left">
-        <% end %>
-    </div>
+
+      <% post.comment.each do |comment| %>
+          <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
+          <p ><%= comment.comment %></p >
+          <br style="clear: left">
+      <% end %>
+
     <div class="separator">
         <br>
     </div>
