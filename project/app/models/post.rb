@@ -14,8 +14,13 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
 
-  def self.search(search)
+  def self.searchPost(search)
     # Title is for the above case, the OP incorrectly had 'name'
     where("title LIKE ?", "%#{search}%")
   end
+  def self.searchPost2(search)
+    # Title is for the above case, the OP incorrectly had 'name'
+    where("location LIKE ?", "%#{search}%")
+  end
+
 end

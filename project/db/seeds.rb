@@ -122,9 +122,11 @@ comments=[]
 
 for u in users
   i = 0
-  for po in posts
-    comments << Comment.new(user: u, post: po, comment: "text"+u.id.to_s+po.id.to_s)
-    i += 1
+  while i < 3 do
+    for po in posts
+      comments << Comment.new(user: u, post: po, comment: "text"+u.id.to_s+po.id.to_s)
+      i += 1
+    end
   end
 end
 

@@ -27,6 +27,12 @@ class User < ApplicationRecord
     user
   end
 
+  def self.searchUser(search)
+    # Title is for the above case, the OP incorrectly had 'name'
+    where("name LIKE ?", "%#{search}%")
+  end
+
+
   # validates :name, presence: true , format: { with: /\A[a-zA-Z]+\z/}
   # validates :password, presence: true
   # validates :email, presence: true , format: { with: URI::MailTo::EMAIL_REGEXP }

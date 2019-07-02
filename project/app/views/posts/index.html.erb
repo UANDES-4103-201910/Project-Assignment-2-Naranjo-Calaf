@@ -10,8 +10,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Il Arrabiato</h1>
-<h2>Posts</h2>
 
+<h1>Posts</h1>
+<h2>By Title</h2>
 <table>
   <thead>
     <tr>
@@ -46,6 +47,70 @@
     <% end %>
   </tbody>
 </table>
+
+
+<h2>By Location</h2>
+<table>
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Open</th>
+    <th>Location</th>
+    <th>Solved</th>
+    <th>Date</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @posts2.each do |post| %>
+    <tr>
+      <td><%= post.user.name %></td>
+      <td><%= post.title %></td>
+      <td><%= post.description %></td>
+      <td><%= post.open %></td>
+      <td><%= post.location %></td>
+      <td><%= post.solved %></td>
+      <td><%= post.date %></td>
+      <% if post.post_img.nil? %>
+        <td><%=image_tag(post.post_img, class:"image-responsive", :size =>"220x150") %></td>
+      <% end %>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h1>Users</h1>
+<h2>By name</h2>
+<table>
+
+  <thead>
+  <tr>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.password %></td>
+      <td><%= user.name %></td>
+      <td><%= link_to 'Show', user %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
 
 <br>
 
