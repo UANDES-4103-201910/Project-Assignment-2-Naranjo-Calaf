@@ -42,8 +42,7 @@
     <p>
       <strong>Open:</strong>
       <%= @post.open %>
-<!--      # TODO: SEARCH: Nickname (Where User.name = @nickname)-->
-<!--      # TODO: SEARCH: LOCATION (Where User.name = @location)-->
+
     </p>
 
     <p>
@@ -82,7 +81,7 @@
     <div><%= pluralize(@post.vote.where(vote: true).count, "upvotes") %></div>
     <div><%= pluralize(@post.vote.where(vote: false).count, "downvotes") %></div>
     <p style="float: left;"><%= button_to '+1', upvote_post_path(@post), method: :post %></p><p><%= button_to '-1', downvote_post_path(@post), method: :post %></p>
-    <p style="float: left;"><%= @post.open%></p><p ><%= @post.solved %></p>
+    <!--<p style="float: left;"><%= @post.open%></p><p ><%= @post.solved %></p>-->
 
     <div>
       <% if @post.user.id == current_user.id%>

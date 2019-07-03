@@ -8,37 +8,53 @@
 </head>
 
 <body>
-<p id="notice"><%= notice %></p>
-
-<h1>Il Arrabiato</h1>
-<h2>Users</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= user.password %></td>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="masthead">
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
+  <div class="topnav">
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+      <%= submit_tag "Search" %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <% end %>
-  </tbody>
-</table>
+    <%#= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%#= text_field_tag :search, params[:search], placeholder: "Search User" %>
+    <%#= submit_tag "SearchUser" %>
+    <%# end %>
+  </div>
+</div>
 
-<br>
+<div class="new_post-section" style="height: 500px">
+  <p id="notice"><%= notice %></p>
+  <h2 align="center">Users</h2><br>
 
-<%= link_to 'New User', new_user_path %>
-<%= link_to 'Home', root_path %>
+  <div align="center">
+    <table>
+      <thead>
+      <tr>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Name</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.password %></td>
+          <td><%= user.name %></td>
+          <td><%= link_to 'Show', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <%= link_to 'New User ', new_user_path %>|
+    <%= link_to 'Home', root_path %>
+  </div>
+</div>
 </body>

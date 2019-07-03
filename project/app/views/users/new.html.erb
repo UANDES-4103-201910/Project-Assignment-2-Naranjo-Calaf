@@ -8,10 +8,22 @@
 </head>
 <body>
 
-<h1>Il Arrabiato</h1>
-<h2>New User</h2>
+<div class="masthead">
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
+  <div class="topnav">
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search" %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
+    <% end %>
+  </div>
+</div>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Back', users_path %>
+<div class= "new_post-section" style="height: 500px">
+  <h2 align="center">New User</h2>
+  <div align="center">
+    <%= render 'form', user: @user %>
+    <%= link_to 'Back', users_path %>
+  </div>
+  </div>
 </body>

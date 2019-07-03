@@ -11,10 +11,14 @@
   <h1><%= link_to "Il Arrabiato", root_path %></h1>
   <div class="topnav">
     <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search" %>
       <%= submit_tag "Search" %>
       <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <% end %>
+    <%#= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%#= text_field_tag :search, params[:search], placeholder: "Search User" %>
+    <%#= submit_tag "SearchUser" %>
+    <%# end %>
   </div>
 </div>
 
@@ -110,27 +114,15 @@
   </div>
 </div>
 
-<script>
-    function HideShow() {
-        var x = document.getElementById("comments");
-        var y = document.getElementById("comment_button");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            y.innerText = 'Hide'
-        } else {
-            x.style.display = "none";
-            y.innerText = 'View Comments'
-        }
-    }
-</script>
 
 
 <div class="postviewer" style="float: left;">
   <div class="postview">
+    <h2>Posts done by</h2>
     <% @posts.each do |post| %>
 
-      <h1><%= link_to post.user.name, profile_path(post.user) %></h1>
-      <h2><%= post.title %></h2>
+      <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
+      <h3><%= post.title %></h3>
       <p><%= post.date %></p>
       <p><%= post.location %></p>
       <h5><%= post.description %></h5>
@@ -145,21 +137,22 @@
 
 
       <h4>COMMENTS</h4>
-
-      <button id="comment_button" onclick="HideShow()">View Comments</button>
-
-      <div class = "commentviewer"  id="comments">
-        <% @comments.each do |comment| %>
-          <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
-          <p ><%= comment.comment %></p >
-          <br style="clear: left">
-        <% end %>
+      <div>
+        <%= button_to "Comment", new_comment_path(post_id:  post.id) %>
       </div>
+
+
+      <% post.comment.each do |comment| %>
+        <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
+        <p ><%= comment.comment %></p >
+        <br style="clear: left">
+      <% end %>
+
       <div class="separator">
-        </br>
+        <br>
       </div>
     <% end %>
-    </br>
   </div>
 </div>
+
 </body>

@@ -34,13 +34,12 @@
     <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search" %>
       <%= submit_tag "Search" %>
+    <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <% end %>
     <%#= form_tag(posts_path, :method => "get", id: "search-form") do %>
       <%#= text_field_tag :search, params[:search], placeholder: "Search User" %>
       <%#= submit_tag "SearchUser" %>
     <%# end %>
-    <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
-
   </div>
 </div>
 
