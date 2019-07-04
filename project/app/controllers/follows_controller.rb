@@ -4,8 +4,12 @@ class FollowsController < ApplicationController
   # GET /follows
   # GET /follows.json
   def index
-    @follows = Follow.where(user: current_user.id).order! 'created_at DESC'
-    @posts = Post.where(id: @follows.ids).order! 'created_at DESC'
+    @follows = Follow.where(user_id: current_user.id)
+    arr = []
+    @follows.each do |follow|
+      arr.append(follow)
+    end
+    @posts = Post.where(id: arr).order! 'created_at DESC'
     @comments = Comment.where(post: @posts.ids).order! 'created_at DESC'
   end
 

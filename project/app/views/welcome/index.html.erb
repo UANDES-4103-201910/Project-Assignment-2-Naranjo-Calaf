@@ -5,25 +5,11 @@
 </head>
 
 <script>
-    function HideShow() {
-        var x = document.getElementById("comments");
-        var y = document.getElementById("comment_button");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            y.innerText = 'Hide Comments'
-        } else {
-            x.style.display = "none";
-            y.innerText = 'View Comments'
-        }
-    }
-
     function Search() {
         var x = document.getElementById("Searchbar").value;
         var y = document.getElementsByTagName("test");
         alert(y[0].innerText)
     }
-
-
 </script>
 
 
@@ -36,10 +22,6 @@
       <%= submit_tag "Search" %>
     <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <% end %>
-    <%#= form_tag(posts_path, :method => "get", id: "search-form") do %>
-      <%#= text_field_tag :search, params[:search], placeholder: "Search User" %>
-      <%#= submit_tag "SearchUser" %>
-    <%# end %>
   </div>
 </div>
 
@@ -48,7 +30,6 @@
   <div class="postview">
   <post><% @posts.each do |post| %></post>
       <% if Dumpster.find_by_post_id(post) == nil %>
-
         <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
         <h3><%= link_to post.title, post_path(post) %></h3>
         <p><%= post.date %></p>
@@ -65,8 +46,7 @@
           <%= button_to '+1', upvote_post_path(post), method: :post %>
           <%= button_to '-1', downvote_post_path(post), method: :post %>
         </div>
-        <%= button_to "Follow", followpost_post_path(:id=>post.id), method: :post %>
-        <%= button_to "Mark as Innapropiate", followpost_post_path(:id=>post.id), method: :post %>
+        <%= button_to "Follow", followpost_post_path(post), method: :post %>
 
 
         <h4>COMMENTS</h4>
