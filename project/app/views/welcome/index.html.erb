@@ -47,41 +47,46 @@
 <div class="postviewer" style="float: left;">
   <div class="postview">
   <post><% @posts.each do |post| %></post>
-      <%if post.avatar.present? %>
-        <%= image_tag post.avatar.url(:medium) %>
-      <%end %>
-    <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
-    <h3><%= link_to post.title, post_path(post) %></h3>
-    <p><%= post.date %></p>
-    <p><%= post.location %></p>
-    <h5><%= post.description %></h5>
+      <% if Dumpster.find_by_post_id(post) == nil%>
 
-    <%# if post.latitude.nil? or post.longitude.nil? %>
-<!--        <p><%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{post.latitude},#{post.longitude}&key=#{AIzaSyDpeoMD25ptcMtu7D1njX9bp0xyPBjW-vA}", alt: "Map" %></p>-->
-    <%# end %>
+        <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
+        <h3><%= link_to post.title, post_path(post) %></h3>
+        <p><%= post.date %></p>
+        <p><%= post.location %></p>
+        <h5><%= post.description %></h5>
 
-
-    <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
-    <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
-    <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
-<!--    <p style="float: left;"><%#= post.open%></p><p ><%#= post.solved %></p>-->
-
-      <%= button_to "Follow", followpost_post_path(:id=>post), method: :post %>
-
-      <h4>COMMENTS</h4>
-      <div>
-        <%#= text_area_tag(:message, "", size: "24x6", id=>post.name+'area_tag') %>
-        <%# var value = post.name+'area_tag'.content.to_s %>
-        <%= button_to "Comment", ncomment_post_path(:id=>post, :comment=>  :content), method: :post %>
-
-      </div>
+        <%if post.avatar.present? %>
+          <%= image_tag post.avatar.url(:medium) %>
+        <%end %>
 
 
-      <% post.comment.each do |comment| %>
+        <div>
+          <%= pluralize(post.vote.where(vote: true).count, "upvotes") %>
+          <%= pluralize(post.vote.where(vote: false).count, "downvotes") %>
+        </div>
+        <div >
+          <%= button_to '+1', upvote_post_path(post), method: :post %>
+          <%= button_to '-1', downvote_post_path(post), method: :post %>
+        </div>
+
+        <%= button_to "Follow", followpost_post_path(:id=>post), method: :post %>
+
+        <h4>COMMENTS</h4>
+        <div>
+          <%#= text_area_tag(:message, "", size: "24x6", id=>post.name+'area_tag') %>
+          <%# var value = post.name+'area_tag'.content.to_s %>
+          <%= button_to "Comment", ncomment_post_path(:id=>post, :comment=>  :content), method: :post %>
+
+        </div>
+
+
+        <% post.comment.each do |comment| %>
           <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
           <p ><%= comment.comment %></p >
           <br style="clear: left">
+        <% end %>
       <% end %>
+
 
     <div class="separator">
         <br>
