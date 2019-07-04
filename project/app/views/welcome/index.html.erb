@@ -29,6 +29,10 @@
 <div class="postviewer" style="float: left;">
   <div class="postview">
   <post><% @posts.each do |post| %></post>
+      <br><br>
+
+      <%= image_tag post.user.profile.avatar.url, size: "100x100"%>
+
       <% if Dumpster.find_by_post_id(post) == nil %>
         <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
         <h3><%= link_to post.title, post_path(post) %></h3>
