@@ -31,10 +31,10 @@
     <%= @profile.user.name %>
   </p>
 
-  <p>
-    <strong>Picture:</strong>
-    <%= @profile.picture %>
-  </p>
+
+  <%if @profile.avatar.present? %>
+   <%= image_tag @profile.avatar.url(:thumb) %>
+  <%end %>
 
   <p>
     <strong>Biography:</strong>
