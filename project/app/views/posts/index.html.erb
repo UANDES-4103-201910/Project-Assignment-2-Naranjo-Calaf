@@ -109,7 +109,9 @@
         <td><%= user.email %></td>
         <td><%= user.password %></td>
         <td><%= user.name %></td>
+        <% if user.profile != nil %>
         <td><%= link_to 'Show', user.profile %></td>
+          <% end %>
       </tr>
     <% end %>
     </tbody>
