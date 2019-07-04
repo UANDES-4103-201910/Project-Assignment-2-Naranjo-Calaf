@@ -47,7 +47,6 @@
 <div class="postviewer" style="float: left;">
   <div class="postview">
   <post><% @posts.each do |post| %></post>
-
       <%if post.avatar.present? %>
         <%= image_tag post.avatar.url(:medium) %>
       <%end %>
@@ -65,12 +64,16 @@
     <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
     <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
     <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
-    <p style="float: left;"><%= post.open%></p><p ><%= post.solved %></p>
+<!--    <p style="float: left;"><%#= post.open%></p><p ><%#= post.solved %></p>-->
 
+      <%= button_to "Follow", followpost_post_path(:id=>post), method: :post %>
 
-    <h4>COMMENTS</h4>
+      <h4>COMMENTS</h4>
       <div>
-        <%= button_to "Comment", new_comment_path(post_id:  post.id) %>
+        <%#= text_area_tag(:message, "", size: "24x6", id=>post.name+'area_tag') %>
+        <%# var value = post.name+'area_tag'.content.to_s %>
+        <%= button_to "Comment", ncomment_post_path(:id=>post, :comment=>  :content), method: :post %>
+
       </div>
 
 

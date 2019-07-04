@@ -82,6 +82,16 @@ class PostsController < ApplicationController
     redirect_to(post_url(@post))
   end
 
+  def followpost
+    @post = Post.find(params[:id])
+    @followed = Follow.find_by(user_id: current_user.id, post_id: @post.id)
+    if @followed != nil
+      @followed.destroy
+    end
+    @post.follow.create(:user_id=> current_user.id, :post_id =>@post.id)
+
+  end
+
   def downvote
     @post = Post.find(params[:id])
     @vote = Vote.find_by(user_id: current_user.id, post_id: @post.id)
@@ -89,6 +99,12 @@ class PostsController < ApplicationController
       @vote.destroy
     end
     @post.vote.create(:user_id => current_user.id, :post_id =>@post.id, :vote => false )
+    redirect_to(post_url(@post))
+  end
+
+  def ncomment
+    @post = Post.find(params[:id])
+    @post.comment.create(:user_id => current_user.id, :post_id=>@post.id, :comment => params[:comment])
     redirect_to(post_url(@post))
   end
 
@@ -100,7 +116,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :title, :description, :open, :location, :solved, :date, :avatar)
+      params.require(:post).permit(:user_id, :title, :description, :open, :location, :solved, :date, :avatar, :latitude, :longitude)
     end
 
     #Comments of post

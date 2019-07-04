@@ -37,9 +37,9 @@
         <td><%= post.location %></td>
         <td><%= post.solved %></td>
         <td><%= post.date %></td>
-        <% if post.post_img.nil? %>
-          <td><%=image_tag(post.post_img, class:"image-responsive", :size =>"220x150") %></td>
-        <% end %>
+        <%if post.avatar.present? %>
+          <%= image_tag post.avatar.url(:thumb) %>
+        <%end %>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -74,9 +74,9 @@
       <td><%= post.location %></td>
       <td><%= post.solved %></td>
       <td><%= post.date %></td>
-      <% if post.post_img.nil? %>
-        <td><%=image_tag(post.post_img, class:"image-responsive", :size =>"220x150") %></td>
-      <% end %>
+      <%if post.avatar.present? %>
+        <%= image_tag post.avatar.url(:medium) %>
+      <%end %>
       <td><%= link_to 'Show', post %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
       <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     member do
       post 'upvote'
       post 'downvote'
+      post 'ncomment'
+      post 'followpost'
     end
   end
   # resources :admins
