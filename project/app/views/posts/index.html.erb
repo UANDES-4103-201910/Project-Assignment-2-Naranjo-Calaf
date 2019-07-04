@@ -8,13 +8,26 @@
 </head>
 <body>
 <p id="notice"><%= notice %></p>
+<div class="masthead">
+  <h1><%= link_to "Il Arrabiato", root_path %></h1>
+  <div class="topnav">
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+      <%= submit_tag "Search" %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
+    <% end %>
+    <%#= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%#= text_field_tag :search, params[:search], placeholder: "Search User" %>
+    <%#= submit_tag "SearchUser" %>
+    <%# end %>
+  </div>
+</div>
 
-<h1>Il Arrabiato</h1>
-
-<h1>Posts</h1>
-<h2>By Title</h2>
-<table>
-  <thead>
+<div class="postviewer" style="float: left; height: 1400px">
+  <h2>Posts</h2>
+  <h3>By Title</h3>
+  <table>
+    <thead>
     <tr>
       <th>User</th>
       <th>Title</th>
@@ -25,9 +38,9 @@
       <th>Date</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.user.name %></td>
@@ -45,74 +58,121 @@
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
 
-<h2>By Location</h2>
-<table>
-  <thead>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Open</th>
-    <th>Location</th>
-    <th>Solved</th>
-    <th>Date</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @posts2.each do |post| %>
+  <h3>By Location</h3>
+  <table>
+    <thead>
     <tr>
-      <td><%= post.user.name %></td>
-      <td><%= post.title %></td>
-      <td><%= post.description %></td>
-      <td><%= post.open %></td>
-      <td><%= post.location %></td>
-      <td><%= post.solved %></td>
-      <td><%= post.date %></td>
-      <%if post.avatar.present? %>
-        <%= image_tag post.avatar.url(:medium) %>
-      <%end %>
-      <td><%= link_to 'Show', post %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <th>User</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Open</th>
+      <th>Location</th>
+      <th>Solved</th>
+      <th>Date</th>
+      <th colspan="3"></th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<h1>Users</h1>
-<h2>By name</h2>
-<table>
+    <tbody>
+    <% @posts2.each do |post| %>
+      <tr>
+        <td><%= post.user.name %></td>
+        <td><%= post.title %></td>
+        <td><%= post.description %></td>
+        <td><%= post.open %></td>
+        <td><%= post.location %></td>
+        <td><%= post.solved %></td>
+        <td><%= post.date %></td>
+        <%if post.avatar.present? %>
+          <%= image_tag post.avatar.url(:medium) %>
+        <%end %>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-  <thead>
-  <tr>
-    <th>Email</th>
-    <th>Password</th>
-    <th>Name</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+  <h2>Users</h2>
+  <h3>By name</h3>
+  <table>
 
-  <tbody>
-  <% @users.each do |user| %>
+    <thead>
     <tr>
-      <td><%= user.email %></td>
-      <td><%= user.password %></td>
-      <td><%= user.name %></td>
-      <td><%= link_to 'Show', user %></td>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Name</th>
+      <th colspan="3"></th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.password %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to 'Show', user %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 
+<div align="center" class="user_container">
+  <User><b><%= current_user.name %></b></User>
 
-<br>
+  <%if current_user.profile.avatar.present? %>
+    <%= image_tag current_user.profile.avatar.url(:thumb) %>
+  <%else%>
+    <%=image_tag "default-user1.png", :alt => "default", :size=> "100x100"%>
+  <%end %>
 
-<%= link_to 'New Post', new_post_path %>
+  <button style="width: 100px">
+    <%= link_to 'Reclaim!', new_post_path%>
+  </button>
+</div>
+
+<div class ="wall_options">
+  <div align="center" class="options">
+    <div>
+      <%if current_user.id == nil %>
+        <%= link_to 'Your Profile', root_path%>
+      <%elsif Profile.find_by_user_id(current_user.id) == nil%>
+        <%= link_to 'Your Profile', new_profile_path(user_id: current_user.id)%>
+      <%else %>
+        <%= link_to 'Your Profile', profile_path(current_user.id)%>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to 'Followed', follows_path%>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Innapropiates',innapropiates_path%>
+      <% end %>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Dumpster', dumpsters_path %>
+      <% end %>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'Blacklist', blacklists_path%>
+      <% end %>
+    </div>
+    <div>
+      <% if Admin.find_by_user_id(current_user.id) != nil%>
+        <%= link_to 'User managment', users_path%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 </body>

@@ -28,37 +28,43 @@
 <div class="postviewer" style="float: left;">
   <div class="postview">
     <% @posts.each do |post| %>
+      <% if Dumpster.find_by_post_id(post) == nil %>
+        <h1><%= link_to post.user.name, profile_path(post.user) %></h1>
+        <h2><%= post.title %></h2>
+        <p><%= post.date %></p>
+        <p><%= post.location %></p>
+        <h5><%= post.description %></h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
+        <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
+        <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
+        <p style="float: left;"><%= post.open%></p><p ><%= post.solved %></p>
 
-      <h1><%= link_to post.user.name, profile_path(post.user) %></h1>
-      <h2><%= post.title %></h2>
-      <p><%= post.date %></p>
-      <p><%= post.location %></p>
-      <h5><%= post.description %></h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
-      <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
-      <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
-      <p style="float: left;"><%= post.open%></p><p ><%= post.solved %></p>
 
-
-      <h4>COMMENTS</h4>
-      <button class ="comment_button" onclick="HideShow()">View Comments</button>
-      <div class = "commentviewer" id ="comments">
-        <% @comments.each do |comment| %>
-          <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
-          <p ><%= comment.comment %></p >
-          <br style="clear: left">
-        <% end %>
-      </div>
-      <div class="separator">
-        <br>
-      </div>
-    <% end %>
+        <h4>COMMENTS</h4>
+        <button class ="comment_button" onclick="HideShow()">View Comments</button>
+        <div class = "commentviewer" id ="comments">
+          <% @comments.each do |comment| %>
+            <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
+            <p ><%= comment.comment %></p >
+            <br style="clear: left">
+          <% end %>
+        </div>
+        <div class="separator">
+          <br>
+        </div>
+      <% end %>
+    <%end %>
   </div>
 </div>
 
 <div align="center" class="user_container">
   <User><b><%= current_user.name %></b></User>
+  <%if current_user.profile.avatar.present? %>
+    <%= image_tag current_user.profile.avatar.url(:thumb) %>
+  <%else%>
+    <%=image_tag "default-user1.png", :alt => "default", :size=> "100x100"%>
+  <%end %>
   <button style="width: 100px">
     <%= link_to 'Reclaim!', new_post_path%>
   </button>

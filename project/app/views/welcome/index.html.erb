@@ -71,7 +71,7 @@
 
         <h4>COMMENTS</h4>
         <div>
-          <%= button_to "Comment", ncomment_post_path(:id=>post, :comment=>  'comment by'+curent_user.id), method: :post %>
+          <%= button_to "Comment", ncomment_post_path(:id=>post, :comment=>  'comment by'), method: :post %>
         </div>
 
 
@@ -92,6 +92,13 @@
 
 <div align="center" class="user_container">
   <User><b><%= current_user.name %></b></User>
+
+  <%if current_user.profile.avatar.present? %>
+    <%= image_tag current_user.profile.avatar.url(:thumb) %>
+  <%else%>
+    <%=image_tag "default-user1.png", :alt => "default", :size=> "100x100"%>
+  <%end %>
+
   <button style="width: 100px">
     <%= link_to 'Reclaim!', new_post_path%>
   </button>

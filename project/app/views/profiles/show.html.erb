@@ -26,15 +26,16 @@
   <h2>Profile Information</h2>
   <p id="notice"><%= notice %></p>
 
+  <%if @profile.avatar.present? %>
+    <%= image_tag @profile.avatar.url(:thumb) %>
+  <%else%>
+    <%=image_tag "default-user1.png", :alt => "default", :size=> "150x150"%>
+  <%end %>
+
   <p>
     <strong>User name:</strong>
     <%= @profile.user.name %>
   </p>
-
-
-  <%if @profile.avatar.present? %>
-   <%= image_tag @profile.avatar.url(:thumb) %>
-  <%end %>
 
   <p>
     <strong>Biography:</strong>
@@ -77,6 +78,11 @@
 
 <div align="center" class="user_container">
   <User><b><%= current_user.name %></b></User>
+  <%if @profile.avatar.present? %>
+    <%= image_tag @profile.avatar.url(:thumb) %>
+  <%else%>
+    <%=image_tag "default-user1.png", :alt => "default", :size=> "100x100"%>
+  <%end %>
   <button style="width: 100px">
     <%= link_to 'Reclaim!', new_post_path%>
   </button>
@@ -120,35 +126,35 @@
   <div class="postview">
     <h2>Posts done by</h2>
     <% @posts.each do |post| %>
-
-      <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
-      <h3><%= post.title %></h3>
-      <p><%= post.date %></p>
-      <p><%= post.location %></p>
-      <h5><%= post.description %></h5>
-      <%if post.avatar.present? %>
-        <%= image_tag post.avatar.url(:medium) %>
-      <%end %>
-      <p><%= post.open%></p><p><%= post.solved %></p>
-      <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
-      <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
-      <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
-      <p style="float: left;"><%= post.open%></p><p ><%= post.solved %></p>
-
-
-      <h4>COMMENTS</h4>
-      <div>
-        <%= button_to "Comment", new_comment_path(post_id:  post.id) %>
-      </div>
+      <% if Dumpster.find_by_post_id(post) == nil %>
+        <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
+        <h3><%= post.title %></h3>
+        <p><%= post.date %></p>
+        <p><%= post.location %></p>
+        <h5><%= post.description %></h5>
+        <%if post.avatar.present? %>
+          <%= image_tag post.avatar.url(:medium) %>
+        <%end %>
+        <p><%= post.open%></p><p><%= post.solved %></p>
+        <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
+        <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
+        <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
+        <p style="float: left;"><%= post.open%></p><p ><%= post.solved %></p>
 
 
-      <% post.comment.each do |comment| %>
-        <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
-        <p ><%= comment.comment %></p >
-        <br style="clear: left">
+        <h4>COMMENTS</h4>
+        <div>
+          <%= button_to "Comment", new_comment_path(post_id:  post.id) %>
+        </div>
+
+
+        <% post.comment.each do |comment| %>
+          <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
+          <p ><%= comment.comment %></p >
+          <br style="clear: left">
+        <% end %>
       <% end %>
-
-      <div class="separator">
+        <div class="separator">
         <br>
       </div>
     <% end %>

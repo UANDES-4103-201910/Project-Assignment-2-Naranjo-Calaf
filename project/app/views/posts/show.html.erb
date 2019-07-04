@@ -11,14 +11,18 @@
   <h1><%= link_to "Il Arrabiato", root_path %></h1>
   <div class="topnav">
     <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search" %>
       <%= submit_tag "Search" %>
       <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <% end %>
+    <%#= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%#= text_field_tag :search, params[:search], placeholder: "Search User" %>
+    <%#= submit_tag "SearchUser" %>
+    <%# end %>
   </div>
 </div>
 
-<div class="new_post-section" style="height: 1200px">
+<div class="new_post-section" style="height: 1400px">
   <h2 align="center">Show Post</h2>
   <br>
   <div align="center">
