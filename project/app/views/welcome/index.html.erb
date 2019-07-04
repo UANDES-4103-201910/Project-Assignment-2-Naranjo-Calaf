@@ -71,7 +71,7 @@
 
         <h4>COMMENTS</h4>
         <div>
-          <%= link_to "Comment this post!", post_path(post)%>
+          <%= button_to "Comment", ncomment_post_path(:id=>post, :comment=>  'comment by'+curent_user.id), method: :post %>
         </div>
 
 
