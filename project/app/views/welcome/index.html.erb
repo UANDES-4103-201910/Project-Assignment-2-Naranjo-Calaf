@@ -47,19 +47,16 @@
 <div class="postviewer" style="float: left;">
   <div class="postview">
   <post><% @posts.each do |post| %></post>
-      <% if Dumpster.find_by_post_id(post) == nil%>
+      <% if Dumpster.find_by_post_id(post) == nil %>
 
         <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
         <h3><%= link_to post.title, post_path(post) %></h3>
         <p><%= post.date %></p>
         <p><%= post.location %></p>
         <h5><%= post.description %></h5>
-
         <%if post.avatar.present? %>
           <%= image_tag post.avatar.url(:medium) %>
         <%end %>
-
-
         <div>
           <%= pluralize(post.vote.where(vote: true).count, "upvotes") %>
           <%= pluralize(post.vote.where(vote: false).count, "downvotes") %>
@@ -68,15 +65,13 @@
           <%= button_to '+1', upvote_post_path(post), method: :post %>
           <%= button_to '-1', downvote_post_path(post), method: :post %>
         </div>
-
         <%= button_to "Follow", followpost_post_path(:id=>post), method: :post %>
+        <%= button_to "Mark as Innapropiate", followpost_post_path(:id=>post), method: :post %>
+
 
         <h4>COMMENTS</h4>
         <div>
-          <%#= text_area_tag(:message, "", size: "24x6", id=>post.name+'area_tag') %>
-          <%# var value = post.name+'area_tag'.content.to_s %>
-          <%= button_to "Comment", ncomment_post_path(:id=>post, :comment=>  :content), method: :post %>
-
+          <%= link_to "Comment this post!", post_path(post)%>
         </div>
 
 

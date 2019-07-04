@@ -21,6 +21,8 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
+
+  <%= link_to('Register', new_user_registration_path) %>
   <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
 <% end %>
 
