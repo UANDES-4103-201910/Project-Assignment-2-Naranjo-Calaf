@@ -78,8 +78,8 @@
 
 <div align="center" class="user_container">
   <User><b><%= current_user.name %></b></User>
-  <%if @profile.avatar.present? %>
-    <%= image_tag @profile.avatar.url(:thumb) %>
+  <%if current_user.profile.avatar.present? %>
+    <%= image_tag current_user.profile.avatar.url(:thumb) %>
   <%else%>
     <%=image_tag "default-user1.png", :alt => "default", :size=> "100x100"%>
   <%end %>

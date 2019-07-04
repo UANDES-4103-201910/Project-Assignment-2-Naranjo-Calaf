@@ -21,6 +21,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+
+    redirect_to root_path
   end
 
   # POST /comments
@@ -37,7 +39,7 @@ class CommentsController < ApplicationController
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
-    redirect_to post_path(@post)
+    redirect_to root_path
   end
 
   # PATCH/PUT /comments/1
@@ -62,7 +64,7 @@ class CommentsController < ApplicationController
       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
-    redirect_to post_path(@post)
+    redirect_to root_path
   end
 
   private

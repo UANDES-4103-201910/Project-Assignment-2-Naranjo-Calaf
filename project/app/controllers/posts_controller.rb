@@ -89,6 +89,7 @@ class PostsController < ApplicationController
       @followed.destroy
     end
     @post.follow.create(:user_id=> current_user.id, :post_id =>@post.id)
+    redirect_to(root_url)
 
   end
 

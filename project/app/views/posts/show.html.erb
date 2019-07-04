@@ -114,10 +114,8 @@
               <td><%= comment.user.name %></td>
               <td><%= comment.comment %></td>
 
-              <% if Admin.find_by_user_id(current_user.id) != nil%>
-                <td><%= link_to 'Show', comment %></td>
+              <% if Admin.find_by_user_id(current_user.id) != nil || current_user.id== comment.user_id%>
                 <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-                <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
               <% end %>
             </tr>

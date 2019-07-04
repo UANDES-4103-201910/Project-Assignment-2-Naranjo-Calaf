@@ -65,19 +65,22 @@
           <%= button_to '+1', upvote_post_path(post), method: :post %>
           <%= button_to '-1', downvote_post_path(post), method: :post %>
         </div>
-        <%= button_to "Follow", followpost_post_path(:id=>post), method: :post %>
-        <%= button_to "Mark as Innapropiate", followpost_post_path(:id=>post), method: :post %>
+        <%= button_to "Follow", followpost_post_path(:id=>post.id), method: :post %>
+        <%= button_to "Mark as Innapropiate", followpost_post_path(:id=>post.id), method: :post %>
 
 
         <h4>COMMENTS</h4>
         <div>
-          <%= button_to "Comment", ncomment_post_path(:id=>post, :comment=>  'comment by'), method: :post %>
+          <%= button_to "Comment", ncomment_post_path(:id=>post.id, :comment=>  'comment by'), method: :post %>
         </div>
 
 
         <% post.comment.each do |comment| %>
           <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
           <p ><%= comment.comment %></p >
+          <% if current_user.id==comment.user_id%>
+            <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+          <% end %>
           <br style="clear: left">
         <% end %>
       <% end %>
@@ -93,11 +96,7 @@
 <div align="center" class="user_container">
   <User><b><%= current_user.name %></b></User>
 
-  <%if current_user.profile.avatar.present? %>
-    <%= image_tag current_user.profile.avatar.url(:thumb) %>
-  <%else%>
-    <%=image_tag "default-user1.png", :alt => "default", :size=> "100x100"%>
-  <%end %>
+
 
   <button style="width: 100px">
     <%= link_to 'Reclaim!', new_post_path%>

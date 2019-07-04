@@ -10,10 +10,6 @@
       <%= submit_tag "Search" %>
       <%= link_to "Log Out", destroy_user_session_path, :method => 'delete'%>
     <% end %>
-    <%#= form_tag(posts_path, :method => "get", id: "search-form") do %>
-    <%#= text_field_tag :search, params[:search], placeholder: "Search User" %>
-    <%#= submit_tag "SearchUser" %>
-    <%# end %>
   </div>
 </div>
 
@@ -27,35 +23,48 @@
 
 <div class="postviewer" style="float: left;">
   <div class="postview">
-    <% @posts.each do |post| %>
-      <% if Dumpster.find_by_post_id(post) == nil %>
-        <h1><%= link_to post.user.name, profile_path(post.user) %></h1>
-        <h2><%= post.title %></h2>
-        <p><%= post.date %></p>
-        <p><%= post.location %></p>
-        <h5><%= post.description %></h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <div><%= pluralize(post.vote.where(vote: true).count, "upvotes") %></div>
-        <div><%= pluralize(post.vote.where(vote: false).count, "downvotes") %></div>
-        <p style="float: left;"><%= button_to '+1', upvote_post_path(post), method: :post %></p><p><%= button_to '-1', downvote_post_path(post), method: :post %></p>
-        <p style="float: left;"><%= post.open%></p><p ><%= post.solved %></p>
+    <post><% @posts.each do |post| %></post>
+        <% if Dumpster.find_by_post_id(post) == nil %>
+
+          <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
+          <h3><%= link_to post.title, post_path(post) %></h3>
+          <p><%= post.date %></p>
+          <p><%= post.location %></p>
+          <h5><%= post.description %></h5>
+          <%if post.avatar.present? %>
+            <%= image_tag post.avatar.url(:medium) %>
+          <%end %>
+          <div>
+            <%= pluralize(post.vote.where(vote: true).count, "upvotes") %>
+            <%= pluralize(post.vote.where(vote: false).count, "downvotes") %>
+          </div>
+          <div >
+            <%= button_to '+1', upvote_post_path(post), method: :post %>
+            <%= button_to '-1', downvote_post_path(post), method: :post %>
+          </div>
+          <%= button_to "Follow", followpost_post_path(:id=>post.id), method: :post %>
+          <%= button_to "Mark as Innapropiate", followpost_post_path(:id=>post.id), method: :post %>
 
 
-        <h4>COMMENTS</h4>
-        <button class ="comment_button" onclick="HideShow()">View Comments</button>
-        <div class = "commentviewer" id ="comments">
-          <% @comments.each do |comment| %>
+          <h4>COMMENTS</h4>
+          <div>
+            <%= button_to "Comment", ncomment_post_path(:id=>post.id, :comment=>  'comment by'), method: :post %>
+          </div>
+
+
+          <% post.comment.each do |comment| %>
             <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
             <p ><%= comment.comment %></p >
             <br style="clear: left">
           <% end %>
-        </div>
+        <% end %>
+
+
         <div class="separator">
           <br>
         </div>
       <% end %>
-    <%end %>
-  </div>
+      </div>
 </div>
 
 <div align="center" class="user_container">
@@ -101,27 +110,3 @@
     </div>
   </div>
 </div>
-<!--<table>-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th>Post</th>-->
-<!--      <th>User</th>-->
-<!--      <th colspan="3"></th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-
-<!--  <tbody>-->
-    <%# @follows.each do |follow| %>
-<!--      <tr>-->
-<!--        <td><%#= follow.post.title %></td>-->
-<!--        <td><%#= follow.user.name %></td>-->
-<!--        <td><%#= link_to 'Show', follow %></td>-->
-<!--        <td><%#= link_to 'Edit', edit_follow_path(follow) %></td>-->
-<!--        <td><%#= link_to 'Destroy', follow, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-<!--      </tr>-->
-    <%# end %>
-<!--  </tbody>-->
-<!--</table>-->
-
-<!--<br>-->
-
