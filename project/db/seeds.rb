@@ -47,7 +47,7 @@ posts =[Post.new(user:users[0], title:"User1 Post1", description:"blablabla11", 
         Post.new(user:users[1], title:"User2 Post2", description:"blablabla22", location:"location4", date:DateTime.now),
         Post.new(user:users[2], title:"User3 Post1", description:"blablabla31", location:"location5", date:DateTime.now),
         Post.new(user:users[2], title:"User3 Post2", description:"blablabla32", location:"location6", date:DateTime.now),
-        Post.new(user:users[2], title:"User3 Post3", description:"blablabla32", location:"BigBen", latitude:40.40, longitude:40 ,date:DateTime.now)
+        Post.new(user:users[2], title:"User3 Post3", description:"blablabla32", location:"BigBen", latitude:51.5007292, longitude:-0.1268194 ,date:DateTime.now)
 ]
 
 for pt in posts

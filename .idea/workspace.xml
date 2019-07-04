@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1b9b8b9-3ad8-4e0d-8be9-2c4e45c9bcb8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/views/follows/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/follows/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app/views/posts/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/posts/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/views/posts/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/posts/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/views/posts/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/posts/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/views/profiles/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/profiles/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/views/profiles/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/profiles/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/project/db/seeds.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,24 +32,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/app/views/welcome/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="95" selection-start-line="95" selection-end-line="95" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="300">
+              <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/app/views/posts/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="86" column="44" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/db/seeds.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/app/views/profiles/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="28" column="6" lean-forward="true" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -62,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/app/views/users/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="435">
               <caret line="29" selection-start-line="10" selection-end-line="29" />
             </state>
           </provider>
@@ -76,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/app/views/follows/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+            <state relative-caret-position="1245">
+              <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -120,7 +126,6 @@
         <option value="$PROJECT_DIR$/project/app/views/dumpsters/edit.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/blacklists/show.html.erb" />
         <option value="$PROJECT_DIR$/project/config/initializers/devise.rb" />
-        <option value="$PROJECT_DIR$/project/db/seeds.rb" />
         <option value="$PROJECT_DIR$/project/app/views/posts/edit.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/profiles/index.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/profiles/edit.html.erb" />
@@ -137,11 +142,12 @@
         <option value="$PROJECT_DIR$/project/app/views/users/index.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/posts/show.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/profiles/show.html.erb" />
-        <option value="$PROJECT_DIR$/project/app/views/posts/index.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/posts/new.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/follows/index.html.erb" />
-        <option value="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" />
         <option value="$PROJECT_DIR$/project/app/views/profiles/new.html.erb" />
+        <option value="$PROJECT_DIR$/project/app/views/welcome/index.html.erb" />
+        <option value="$PROJECT_DIR$/project/app/views/posts/index.html.erb" />
+        <option value="$PROJECT_DIR$/project/db/seeds.rb" />
       </list>
     </option>
   </component>
@@ -157,6 +163,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -232,7 +239,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -481,12 +487,13 @@
       <workItem from="1560868773160" duration="121000" />
       <workItem from="1562109140738" duration="2059000" />
       <workItem from="1562113822492" duration="3188000" />
-      <workItem from="1562217567481" duration="4335000" />
+      <workItem from="1562217567481" duration="4652000" />
+      <workItem from="1562262143159" duration="2841000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110608000" />
+    <option name="totallyTimeSpent" value="113766000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,7 +508,7 @@
     <frame x="67" y="25" width="1299" height="638" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3048683" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3104549" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -514,7 +521,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3280943" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4971623" visible="true" weight="0.3438114" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4971623" visible="true" weight="0.3438114" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50283766" side_tool="true" weight="0.3488665" />
       <window_info anchor="bottom" id="Thumbnails" order="12" visible="true" weight="0.3280943" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -694,13 +701,6 @@
     <entry file="file://$PROJECT_DIR$/project/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/db/seeds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="127" selection-start-line="49" selection-start-column="127" selection-end-line="49" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/app/controllers/welcome_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -832,17 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/posts/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="123" column="10" lean-forward="true" selection-start-line="123" selection-start-column="10" selection-end-line="123" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/app/views/posts/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -856,41 +845,48 @@
     <entry file="file://$PROJECT_DIR$/project/app/views/follows/index.json.jbuilder">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/follows/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/follows/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/project/app/views/profiles/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/welcome/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app/views/users/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="435">
           <caret line="29" selection-start-line="10" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/app/views/profiles/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/project/app/views/follows/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/views/follows/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="6" lean-forward="true" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1245">
+          <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/views/welcome/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/app/views/posts/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="86" column="44" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>

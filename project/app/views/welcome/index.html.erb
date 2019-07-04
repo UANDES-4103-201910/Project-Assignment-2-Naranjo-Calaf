@@ -58,9 +58,6 @@
         <% post.comment.each do |comment| %>
           <p style="float: left;"><%= link_to comment.user.name, profile_path(comment.user) %></p>
           <p ><%= comment.comment %></p >
-          <% if current_user.id==comment.user_id%>
-            <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-          <% end %>
           <br style="clear: left">
         <% end %>
       <% end %>
