@@ -50,6 +50,10 @@
       <%= @post.location %>
     </p>
 
+    <%if @post.avatar.present? %>
+      <%= image_tag @post.avatar.url(:medium) %>
+    <%end %>
+
     <p>
       <strong>Solved:</strong>
       <%= @post.solved %>

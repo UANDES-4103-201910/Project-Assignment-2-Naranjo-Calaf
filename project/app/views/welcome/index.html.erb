@@ -48,14 +48,15 @@
   <div class="postview">
   <post><% @posts.each do |post| %></post>
 
+      <%if post.avatar.present? %>
+        <%= image_tag post.avatar.url(:medium) %>
+      <%end %>
     <h2><%= link_to post.user.name, profile_path(post.user) %></h2>
     <h3><%= link_to post.title, post_path(post) %></h3>
     <p><%= post.date %></p>
     <p><%= post.location %></p>
     <h5><%= post.description %></h5>
-    <% if post.post_img.nil? %>
-      <p><%=image_tag(post.post_img, class:"image-responsive", :size =>"220x150") %></p>
-    <% end %>
+
     <%# if post.latitude.nil? or post.longitude.nil? %>
 <!--        <p><%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{post.latitude},#{post.longitude}&key=#{AIzaSyDpeoMD25ptcMtu7D1njX9bp0xyPBjW-vA}", alt: "Map" %></p>-->
     <%# end %>
